@@ -9,7 +9,6 @@ function App() {
     <div className="App">
       <h1>Country - Capital - Flag</h1>
       <Countries />
-      {/* <Country /> */}
     </div>
   );
 }
