@@ -3,3 +3,8 @@
  React Hook "useState" is called in function "requestapi" which is neither a React function component or a custom React Hook function
  Solution: https://stackoverflow.com/questions/55846641/react-hook-usestate-is-called-in-function-app-which-is-neither-a-react-funct
  Capitalized the function name
+
+
+import Requestapi from "./requestapi";
+Here the "./requestapi" should match exactly with the name of the file in the disk. Case sensitive.
+Even "Requestapi" should match the "export default Requestapi" in the component
