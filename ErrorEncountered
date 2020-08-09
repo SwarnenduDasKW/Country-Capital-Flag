@@ -1,0 +1,5 @@
+/* These are the list of error and warnings that I received while development */
+
+ React Hook "useState" is called in function "requestapi" which is neither a React function component or a custom React Hook function
+ Solution: https://stackoverflow.com/questions/55846641/react-hook-usestate-is-called-in-function-app-which-is-neither-a-react-funct
+ Capitalized the function name
