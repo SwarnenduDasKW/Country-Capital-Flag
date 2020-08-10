@@ -1,32 +1,46 @@
-import React, {useEffect,useState } from 'react';
+import React, { useEffect, useState } from "react";
 import "./Countries.css";
 import Country from "./Country";
+import Requestapi from "./requestapi";
 
-function Countries() {
-  //"https://restcountries.eu/rest/v2/name/india"
-  //"https://restcountries.eu/rest/v2/all"
-    const [countryList, setcountryList] = useState([]);
+const base_url = "https://restcountries.eu/rest/v2/all";
+const country_search_url = "https://restcountries.eu/rest/v2/name/ia";
 
-    useEffect(() => {
-        getAllCountries();
-    }, []);
+function Countries({ data_passed }) {
+  const [countryList, setcountryList] = useState([]);
 
-    const getAllCountries = async() => {
-        const response = await fetch("https://restcountries.eu/rest/v2/name/ia");
-        const data =  await response.json();
-        console.log("Data",data);
-        setcountryList(data);
-    }
+  useEffect(() => {
+    // if (data_passed.length === 0) {
+    console.log("data_passed", data_passed);
+    getAllCountries();
+    // } else setcountryList(data_passed);
+    //makeApicall();
+  }, [data_passed]);
 
-    return (
-        <div className="countries">
-            {/* <ul>{countryList.map(x => <li>{x.name} - {x.capital} - {x.currencies[0].name}</li>)}</ul> */}
-            {countryList.map(x => 
-             <Country name={x.name} flag={x.flag} capital={x.capital}/>
-            )}
-           
-        </div>
-    )   
+  const getAllCountries = async () => {
+    const response = await fetch(country_search_url);
+    const data = await response.json();
+
+    setcountryList(data);
+  };
+
+  // const makeApicall = () => {
+  //   console.log("Countries --> ", countryList);
+  // };
+  //console.table(countryList);
+  return (
+    <div className="countries">
+      {/* <ul>{countryList.map(x => <li>{x.name} - {x.capital} - {x.currencies[0].name}</li>)}</ul> */}
+      {countryList.map((country) => (
+        <Country
+          key={country.alpha2Code}
+          name={country.name}
+          flag={country.flag}
+          capital={country.capital}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default Countries
+export default Countries;

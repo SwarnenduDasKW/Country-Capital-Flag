@@ -1,5 +1,12 @@
 .countries {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 80px;
+  /* margin-left: 5px; */
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(75, 75, 78, 0.61),
+    rgb(110, 17, 17)
+  );
 }

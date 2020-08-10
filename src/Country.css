@@ -1,7 +1,37 @@
 .country {
-    max-width: 300;
-    max-height: 270;   
-    margin-left: 10px;
-    margin-bottom: 10px; 
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+
+  background-color: rgb(83, 78, 78);
 }
 
+.country__flag {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  transition: transform 450ms; /* use a delay while transforming. Here on mouse hover the picture grows */
+}
+
+.country__flag:hover {
+  transform: scale(1.08); /*Scales the picture it's 1.08 times */
+  /* transform: translate(0px, -10px); */
+  opacity: 1;
+}
+
+.country__name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  margin-left: 5px;
+  background-color: rgb(83, 78, 78);
+}
+
+.country__capital {
+  font-size: 10px;
+  font-weight: 500;
+  margin-left: 5px;
+  color: lightgray;
+  background-color: rgb(83, 78, 78);
+}

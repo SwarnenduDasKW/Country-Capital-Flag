@@ -1,13 +1,15 @@
-import React from 'react';
-import './App.css';
-import Country from './Country';
-import Countries from './Countries';
+import React from "react";
+import "./App.css";
+import Country from "./Country";
+import Countries from "./Countries";
+import Navbar from "./Navbar";
+import Appbar from "./Appbar";
 
 function App() {
-  
   return (
     <div className="App">
-      <h1>Country - Capital - Flag</h1>
+      <Navbar />
+      {/* <Appbar /> */}
       <Countries />
     </div>
   );
