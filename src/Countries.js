@@ -1,42 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./Countries.css";
 import Country from "./Country";
-import Requestapi from "./requestapi";
+import { CountryContext } from "./CountryContext";
 
 const base_url = "https://restcountries.eu/rest/v2/all";
-const country_search_url = "https://restcountries.eu/rest/v2/name/ia";
+//const country_search_url = "https://restcountries.eu/rest/v2/name/ia";
 
-function Countries({ data_passed }) {
-  const [countryList, setcountryList] = useState([]);
+function Countries() {
+  const { countrydata, setCountrydata } = useContext(CountryContext);
 
+  //When the component load make the API call to get the data and store it in the context
   useEffect(() => {
-    // if (data_passed.length === 0) {
-    console.log("data_passed", data_passed);
     getAllCountries();
-    // } else setcountryList(data_passed);
-    //makeApicall();
-  }, [data_passed]);
+  }, []);
 
+  //Make API call and and store it in the context
   const getAllCountries = async () => {
-    const response = await fetch(country_search_url);
+    const response = await fetch(base_url);
     const data = await response.json();
 
-    setcountryList(data);
+    setCountrydata(data);
   };
 
-  // const makeApicall = () => {
-  //   console.log("Countries --> ", countryList);
-  // };
-  //console.table(countryList);
   return (
     <div className="countries">
       {/* <ul>{countryList.map(x => <li>{x.name} - {x.capital} - {x.currencies[0].name}</li>)}</ul> */}
-      {countryList.map((country) => (
+
+      {countrydata.map((country) => (
         <Country
           key={country.alpha2Code}
           name={country.name}
           flag={country.flag}
           capital={country.capital}
+          currency={country.currencies[0].name}
         />
       ))}
     </div>

@@ -1,5 +1,13 @@
 import React,{useEffect,useState} from 'react'
-
+/*
+…or create a new repository on the command line
+echo "# Country-Capital-Flag" >> README.md
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/SwarnenduDasKW/Country-Capital-Flag.git
+git push -u origin master
+*/
 function LearnTheHardWay() {
     const [something,setSomething] = useState("");
     const [anArray,setanArray] = useState([{

@@ -46,3 +46,11 @@
   /* background-color: #fff; */
   width: 300px;
 }
+
+.nav__badge {
+  margin-left: 20px;
+}
+
+.nav__badgeicon {
+  color: rgb(255, 255, 255) !important;
+}

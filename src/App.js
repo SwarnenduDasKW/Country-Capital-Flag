@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import "./App.css";
-import Country from "./Country";
 import Countries from "./Countries";
 import Navbar from "./Navbar";
-import Appbar from "./Appbar";
+import { CountryContext } from "./CountryContext";
 
 function App() {
+  const [countrydata, setCountrydata] = useState([]);
+  const countrydataProvider = useMemo(() => ({ countrydata, setCountrydata }), [
+    countrydata,
+    setCountrydata,
+  ]);
+
   return (
     <div className="App">
-      <Navbar />
-      {/* <Appbar /> */}
-      <Countries />
+      <CountryContext.Provider value={countrydataProvider}>
+        <Navbar />
+        <Countries />
+      </CountryContext.Provider>
     </div>
   );
 }

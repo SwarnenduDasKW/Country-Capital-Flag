@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Navbar.css";
 import logo from "./images/c3f2.png";
-import SearchIcon from "@material-ui/icons/Search";
-import Countries from "./Countries";
-import Requestapi from "./requestapi";
+import { CountryContext } from "./CountryContext";
+import Badge from "@material-ui/core/Badge";
+import PublicIcon from "@material-ui/icons/Public";
 
+const base_url = "https://restcountries.eu/rest/v2/all";
 const url_country = "https://restcountries.eu/rest/v2/name/";
 
 function Navbar() {
   const [show, handleShow] = useState(false);
   const [input, setInput] = useState("");
-  const [search, setSearch] = useState("India");
-  const [countryList, setcountryList] = useState([]);
 
+  const { countrydata, setCountrydata } = useContext(CountryContext);
+
+  //Change the nav bar background color from dark blue to black on scrolling
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -25,25 +27,32 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    getCountriesBySearch();
-  }, [search]);
+    searchCountry();
+  }, [input]);
 
-  const getCountriesBySearch = async () => {
-    const response = await fetch(`${url_country}${search}`);
+  //REST call to get the list of countries based on the search string.
+  //If search strin is blank then retrieve all the countries.
+  //Also set the recent search data to the context
+  async function searchCountry() {
+    let url = "";
+    if (input === "") {
+      url = base_url;
+    } else {
+      url = `${url_country}${input}`;
+    }
+
+    //console.log("Nav --> url:", url);
+    const response = await fetch(url);
     const data = await response.json();
-
-    console.table(data);
-    setcountryList(data);
-  };
-
-  const performSearch = (event) => {
-    console.log("Search Text: ", input);
-    setSearch(input);
-  };
+    //console.table(data);
+    console.log(data);
+    setCountrydata(data);
+  }
 
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <img className="nav__logo" src={logo} alt="C3F-Logo" />
+
       <div className="nav__search">
         <input
           className="nav__searchtext"
@@ -52,13 +61,14 @@ function Navbar() {
           value={input}
           onChange={(event) => setInput(event.target.value)}
         />
-        <button
-          className="nav__searchbutton"
-          type="submit"
-          onClick={performSearch}
-        >
+        <button className="nav__searchbutton" onClick={() => searchCountry()}>
           Search
         </button>
+      </div>
+      <div className="nav__badge">
+        <Badge badgeContent={countrydata.length} color="error" max={999}>
+          <PublicIcon className="nav__badgeicon" />
+        </Badge>
       </div>
     </div>
   );

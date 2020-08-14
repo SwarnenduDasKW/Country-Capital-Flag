@@ -29,6 +29,14 @@
 }
 
 .country__capital {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 5px;
+  color: lightgray;
+  background-color: rgb(83, 78, 78);
+}
+
+.country__currency {
   font-size: 10px;
   font-weight: 500;
   margin-left: 5px;

@@ -30,6 +30,8 @@ function Requestapi() {
       );
   }, []);
 
+  return items;
+  /*
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
@@ -44,6 +46,7 @@ function Requestapi() {
       //   </ul>
     );
   }
+  */
 }
 
 export default Requestapi;
