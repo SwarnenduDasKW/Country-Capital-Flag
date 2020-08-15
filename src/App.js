@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import "./App.css";
 import Countries from "./Countries";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import { CountryContext } from "./CountryContext";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Navbar />
         <Countries />
       </CountryContext.Provider>
+      <Footer />
     </div>
   );
 }

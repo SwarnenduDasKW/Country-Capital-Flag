@@ -5,12 +5,15 @@ import { CountryContext } from "./CountryContext";
 import Badge from "@material-ui/core/Badge";
 import PublicIcon from "@material-ui/icons/Public";
 
-const base_url = "https://restcountries.eu/rest/v2/all";
+const base_url = "https://restcountries.eu/rest/v2/all/";
 const url_country = "https://restcountries.eu/rest/v2/name/";
+//const country_search_url = "https://restcountries.eu/rest/v2/name/uni";
 
 function Navbar() {
   const [show, handleShow] = useState(false);
   const [input, setInput] = useState("");
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const { countrydata, setCountrydata } = useContext(CountryContext);
 
@@ -33,7 +36,7 @@ function Navbar() {
   //REST call to get the list of countries based on the search string.
   //If search strin is blank then retrieve all the countries.
   //Also set the recent search data to the context
-  async function searchCountry() {
+  function searchCountry() {
     let url = "";
     if (input === "") {
       url = base_url;
@@ -41,12 +44,39 @@ function Navbar() {
       url = `${url_country}${input}`;
     }
 
-    //console.log("Nav --> url:", url);
-    const response = await fetch(url);
-    const data = await response.json();
-    //console.table(data);
-    console.log(data);
-    setCountrydata(data);
+    // Exapmle of Async-Await call
+    // console.log("Nav --> url:", url);
+    // const response = await fetch(url);
+    // const data = await response.json();
+    // console.table(data);
+    // console.log(data);
+    // setCountrydata(data);
+
+    fetch(url)
+      .then((response) => response.json())
+      .then(
+        (data) => {
+          setIsLoaded(true);
+          console.log("Navbar --> data: ", data);
+          if (!data.length) {
+            console.log("Navbar --> fetch. No data found");
+            setCountrydata([]);
+          } else {
+            setCountrydata(data);
+          }
+        },
+        (error) => {
+          console.log("Navbar --> error: ", error);
+          setIsLoaded(true);
+          setError(error);
+        }
+      )
+      .catch((error) => {
+        console.error(
+          "There has been a problem with your fetch operation:",
+          error
+        );
+      });
   }
 
   return (

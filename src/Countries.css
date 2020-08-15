@@ -1,8 +1,9 @@
 .countries {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 80px;
+  /* flex-wrap: wrap; */
+  /* margin-top: 80px; */
   /* margin-left: 5px; */
+  /* margin-bottom: 20px; */
 
   background-image: linear-gradient(
     180deg,
@@ -10,4 +11,20 @@
     rgba(75, 75, 78, 0.61),
     rgb(110, 17, 17)
   );
+}
+
+.countries__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 65px;
+}
+
+.countries__norowsfound {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.countries__nomatchtext {
+  color: rgb(99, 14, 14);
 }

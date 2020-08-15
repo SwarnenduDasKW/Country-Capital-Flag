@@ -1,0 +1,32 @@
+.footer {
+  /* position: fixed; */
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  background-color: rgb(0, 8, 59);
+  /* z-index: 99; */
+  height: 40px;
+}
+
+.footer__texts {
+  align-items: center;
+  display: flex;
+  /* width: 50%; */
+  margin-left: 10px;
+}
+
+.footer__texts > h1,
+a {
+  font-size: 10px;
+  font-weight: 500;
+  margin-left: 5px;
+  color: rgba(240, 240, 240);
+}
+
+.footer_social {
+  display: flex;
+  width: 100px;
+  color: white !important;
+  justify-content: space-evenly;
+  margin-right: 20px;
+}
