@@ -59,3 +59,5 @@ The url will be created.
 3. Implement scoring system
 4. The footer doesn't stay at the bottom of the home page when list becomes smaller
 5. Don't like the white background
+6. The Navbar disappears on scrolling
+7. Upon loadin of the quiz page if user clicks of previous button the application crashes.
