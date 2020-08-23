@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -10,10 +10,16 @@ import Button from "@material-ui/core/Button";
 import "./CountryCapitalQuiz.css";
 
 function CountryCapitalQuiz(props) {
-  console.log("I am in CountryCapitalQuiz");
+  //console.log("I am in CountryCapitalQuiz");
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const [helperText, setHelperText] = useState("What do you think?");
+
+  // Check how you can call setHelperText from ParentComponent when Next or Previous button is clicked.
+  useEffect(() => {
+    setHelperText(" ");
+    return () => {};
+  }, [props]);
 
   const handleRadioChange = (event) => {
     setValue(event.target.value);

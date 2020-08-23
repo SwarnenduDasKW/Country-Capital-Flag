@@ -76,7 +76,9 @@ function QuizMaster() {
       <div className="quizmaster__questions">
         <Button
           className="quizmaster__prev"
-          onClick={() => setId(id - 1)}
+          onClick={() =>
+            id === 1 ? setId(countrylist.length - 1) : setId(id - 1)
+          }
           variant="contained"
           color="secondary"
           startIcon={<FastRewindIcon fontSizeLarge />}
@@ -89,7 +91,9 @@ function QuizMaster() {
           variant="contained"
           color="secondary"
           startIcon={<FastForwardIcon />}
-          onClick={() => setId(id + 1)}
+          onClick={() =>
+            id === countrylist.length - 1 ? setId(0) : setId(id + 1)
+          }
         >
           next
         </Button>
