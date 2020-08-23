@@ -1,0 +1,19 @@
+.countrycapitalquiz {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.countrycapitalquiz__question {
+  /* border: 2px solid blue; */
+}
+
+.countrycapitalquiz__answers {
+  /* border: 2px solid green; */
+  margin-top: 20px;
+}
+
+.countrycapitalquiz_checkanswer {
+  margin-top: 20px !important;
+}

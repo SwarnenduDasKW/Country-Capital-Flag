@@ -22,11 +22,18 @@
 
 .nav__logo {
   /* position: fixed; */
-  width: 160px;
-  left: 10px;
+  width: 260px;
+  height: 40px;
+  /* left: 10px; */
   object-fit: contain;
 }
 
+.nav__quizlogo {
+  width: 100px;
+  height: 30px;
+  margin-left: 20px;
+  object-fit: contain;
+}
 .nav__logosearch {
   justify-content: space-evenly;
 }
@@ -48,7 +55,7 @@
 }
 
 .nav__badge {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .nav__badgeicon {

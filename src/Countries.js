@@ -30,7 +30,11 @@ function Countries() {
               name={country.name}
               flag={country.flag}
               capital={country.capital}
-              currency={country.currencies[0].name}
+              currency={
+                country.currencies[0].name +
+                " - " +
+                country.currencies[0].symbol
+              }
             />
           ))}
         </div>

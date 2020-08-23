@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./Navbar.css";
 import logo from "./images/c3f2.png";
+import quiz_logo from "./images/quiz.png";
 import { CountryContext } from "./CountryContext";
 import Badge from "@material-ui/core/Badge";
 import PublicIcon from "@material-ui/icons/Public";
+import { Link } from "react-router-dom";
 
 const base_url = "https://restcountries.eu/rest/v2/all/";
 const url_country = "https://restcountries.eu/rest/v2/name/";
@@ -81,8 +83,9 @@ function Navbar() {
 
   return (
     <div className={`nav ${show && "nav__black"}`}>
-      <img className="nav__logo" src={logo} alt="C3F-Logo" />
-
+      <Link to="/">
+        <img className="nav__logo" src={logo} alt="C3F-Logo" />
+      </Link>
       <div className="nav__search">
         <input
           className="nav__searchtext"
@@ -91,15 +94,18 @@ function Navbar() {
           value={input}
           onChange={(event) => setInput(event.target.value)}
         />
-        <button className="nav__searchbutton" onClick={() => searchCountry()}>
+        {/* <button className="nav__searchbutton" onClick={() => searchCountry()}>
           Search
-        </button>
+        </button> */}
       </div>
       <div className="nav__badge">
         <Badge badgeContent={countrydata.length} color="error" max={999}>
           <PublicIcon className="nav__badgeicon" />
         </Badge>
       </div>
+      <Link to="/quiz">
+        <img className="nav__quizlogo" src={quiz_logo} alt="quiz-logo" />
+      </Link>
     </div>
   );
 }

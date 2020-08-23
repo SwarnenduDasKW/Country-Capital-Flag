@@ -1,0 +1,27 @@
+.quizmaster {
+  margin-top: 80px;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  /* border: 2px solid red; */
+  min-height: calc(100vh - 40px - 80px);
+}
+
+.quizmaster__questions {
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+  /* border: 2px solid green; */
+}
+
+.quizmaster__questions > Button {
+  /* margin auto to horizontally center the elements in it's container */
+  margin: auto;
+  height: 40px;
+  width: 120px !important;
+}
+
+.quizmaster__next {
+  float: right;
+  width: 120px !important;
+}
