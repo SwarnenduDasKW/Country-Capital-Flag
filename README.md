@@ -64,4 +64,4 @@ The url will be created.
 7. Upon loading of the quiz page if user clicks of previous button the application crashes. - Disabled the previous button on the 1st question and the next button on the last question
 8. Remember the previous answers so that user can see the chosen answers. - Done
 9. Remove the "Check Answer" and Score. Replace that by Submit button. A report will popup showing user's selection and correct answer and score.
-10.
+10. Code cleanup and organize the components properly
