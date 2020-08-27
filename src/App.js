@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import QuizCountryCurrency from "./QuizCountryCurrency";
 import QuizMaster from "./QuizMaster";
 import { CountryContext } from "./CountryContext";
+import { AnswerContext } from "./answer-context";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -15,6 +16,12 @@ function App() {
     setCountrydata,
   ]);
 
+  const [answer, setAnswer] = useState(new Map());
+  const answerProvider = useMemo(() => ({ answer, setAnswer }), [
+    answer,
+    setAnswer,
+  ]);
+
   return (
     <Router>
       <div className="App">
@@ -22,7 +29,9 @@ function App() {
           <Navbar />
           <Switch>
             <Route path="/" exact component={Countries} />
-            <Route path="/quiz" exact component={QuizMaster} />
+            <AnswerContext.Provider value={answerProvider}>
+              <Route path="/quiz" exact component={QuizMaster} />
+            </AnswerContext.Provider>
             {/* <QuizCountryCurrency /> */}
             {/* <Countries /> */}
           </Switch>

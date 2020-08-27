@@ -59,7 +59,7 @@ function Navbar() {
       .then(
         (data) => {
           setIsLoaded(true);
-          console.log("Navbar --> data: ", data);
+          //console.log("Navbar --> data: ", data);
           if (!data.length) {
             console.log("Navbar --> fetch. No data found");
             setCountrydata([]);

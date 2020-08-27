@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./QuizMaster.css";
 import CountryCapitalQuiz from "./CountryCapitalQuiz";
 import Button from "@material-ui/core/Button";
 import FastRewindIcon from "@material-ui/icons/FastRewind";
 import FastForwardIcon from "@material-ui/icons/FastForward";
+import { AnswerContext } from "./answer-context";
 
 function QuizMaster() {
+  const { answer } = useContext(AnswerContext);
+
   const [countrylist] = useState([
     {
       id: 237,
@@ -71,17 +74,22 @@ function QuizMaster() {
 
   const [id, setId] = useState(0);
 
+  //Clear the previous answers when the quiz page is loaded
+  useEffect(() => {
+    answer.clear();
+  }, []);
+
   return (
     <div className="quizmaster">
       <div className="quizmaster__questions">
+        {/* <AnswerContext.Provider value={answerProvider}> */}
         <Button
           className="quizmaster__prev"
-          onClick={() =>
-            id === 1 ? setId(countrylist.length - 1) : setId(id - 1)
-          }
           variant="contained"
           color="secondary"
-          startIcon={<FastRewindIcon fontSizeLarge />}
+          startIcon={<FastRewindIcon />}
+          onClick={() => setId(id - 1)}
+          disabled={id === 0}
         >
           previous
         </Button>
@@ -91,12 +99,12 @@ function QuizMaster() {
           variant="contained"
           color="secondary"
           startIcon={<FastForwardIcon />}
-          onClick={() =>
-            id === countrylist.length - 1 ? setId(0) : setId(id + 1)
-          }
+          disabled={id === countrylist.length - 1}
+          onClick={() => setId(id + 1)}
         >
           next
         </Button>
+        {/* </AnswerContext.Provider> */}
       </div>
     </div>
   );

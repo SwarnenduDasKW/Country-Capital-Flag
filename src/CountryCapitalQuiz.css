@@ -17,3 +17,8 @@
 .countrycapitalquiz_checkanswer {
   margin-top: 20px !important;
 }
+
+.countrycapitalquiz__score {
+  width: 100px;
+  margin-top: 10px;
+}

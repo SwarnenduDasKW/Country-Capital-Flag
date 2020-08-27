@@ -56,8 +56,12 @@ The url will be created.
 
 1. The quiz has hardcoded countries. Need to work with random data
 2. Show the flag of the country in the quiz page
-3. Implement scoring system
-4. The footer doesn't stay at the bottom of the home page when list becomes smaller
-5. Don't like the white background
-6. The Navbar disappears on scrolling
-7. Upon loadin of the quiz page if user clicks of previous button the application crashes.
+3. Implement scoring system - Done
+4. The footer doesn't stay at the bottom when the country list becomes smaller (basically when you search for a country)
+   The code to keep footer at the bottom is done for the quiz page but need a generic solution.
+5. Don't like the white background - Done
+6. The Navbar disappears on scrolling - It's not hapenning now.
+7. Upon loading of the quiz page if user clicks of previous button the application crashes. - Disabled the previous button on the 1st question and the next button on the last question
+8. Remember the previous answers so that user can see the chosen answers. - Done
+9. Remove the "Check Answer" and Score. Replace that by Submit button. A report will popup showing user's selection and correct answer and score.
+10.
