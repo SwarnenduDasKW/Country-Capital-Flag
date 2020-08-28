@@ -1,5 +1,5 @@
 import React from "react";
-import "./Country.css";
+import "../stylesheets/Country.css";
 
 function Country(props) {
   return (

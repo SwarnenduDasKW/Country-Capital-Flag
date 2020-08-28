@@ -6,10 +6,10 @@ import FormControl from "@material-ui/core/FormControl";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import Button from "@material-ui/core/Button";
 import Chip from "@material-ui/core/Chip";
-import { AnswerContext } from "./answer-context";
+import { AnswerContext } from "../contexts/answerContext";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
-import "./CountryCapitalQuiz.css";
+import "../stylesheets/CountryCapitalQuiz.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {

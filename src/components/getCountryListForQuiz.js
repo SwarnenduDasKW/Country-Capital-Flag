@@ -1,12 +1,12 @@
-import AllCountries from "./data/AllCountries.json";
+import AllCountries from "../data/AllCountries.json";
 // import AllCountriesLite from "./data/AllCountriesLight.json";
 import {
   getRandomNumbersArray,
   getRandomIntInclusive,
   FisherYatesShuffle,
-} from "./Utilities";
+} from "../helpers/Utilities";
 
-function QuizCountryCurrency() {
+function getCountryListForQuiz() {
   const noOfQuestions = 10;
   let allCountriesWithIndex = [];
   let quizCountries = [];
@@ -105,4 +105,4 @@ function QuizCountryCurrency() {
   return quizCountries;
 }
 
-export default QuizCountryCurrency;
+export default getCountryListForQuiz;

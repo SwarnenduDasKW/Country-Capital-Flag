@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
-import "./Navbar.css";
-import logo from "./images/c3f2.png";
-import quiz_logo from "./images/quiz.png";
-import { CountryContext } from "./CountryContext";
+import "../stylesheets/Navbar.css";
+import logo from "../images/c3f2.png";
+import quiz_logo from "../images/quiz.png";
+import { CountryContext } from "../contexts/CountryContext";
 import Badge from "@material-ui/core/Badge";
 import PublicIcon from "@material-ui/icons/Public";
 import { Link } from "react-router-dom";

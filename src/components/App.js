@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { CountryContext } from "./CountryContext";
-import { AnswerContext } from "./answer-context";
-import Countries from "./Countries";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import QuizMaster from "./QuizMaster";
-import "./App.css";
+import { CountryContext } from "../contexts/CountryContext";
+import { AnswerContext } from "../contexts/answerContext";
+import Countries from "../components/Countries";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import QuizMaster from "../components/QuizMaster";
+import "../stylesheets/App.css";
 
 function App() {
   const [countrydata, setCountrydata] = useState([]);

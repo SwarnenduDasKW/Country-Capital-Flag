@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
-import CountryCapitalQuiz from "./CountryCapitalQuiz";
+import CountryCapitalQuiz from "../components/CountryCapitalQuiz";
 import Button from "@material-ui/core/Button";
 import FastRewindIcon from "@material-ui/icons/FastRewind";
 import FastForwardIcon from "@material-ui/icons/FastForward";
-import { AnswerContext } from "./answer-context";
-import QuizCountryCurrency from "./QuizCountryCurrency";
-import "./QuizMaster.css";
+import { AnswerContext } from "../contexts/answerContext";
+import getCountryListForQuiz from "../components/getCountryListForQuiz";
+import "../stylesheets/QuizMaster.css";
 
 function QuizMaster() {
   const [id, setId] = useState(0);
-  const [quizCountries] = useState(QuizCountryCurrency());
+  const [quizCountries] = useState(getCountryListForQuiz());
   const { answer } = useContext(AnswerContext);
 
   //Clear the previous answers when the quiz page is loaded

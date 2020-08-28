@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.css";
+import "../stylesheets/Footer.css";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";

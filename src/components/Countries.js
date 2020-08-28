@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
-import "./Countries.css";
-import Country from "./Country";
-import { CountryContext } from "./CountryContext";
+import "../stylesheets/Countries.css";
+import Country from "../components/Country";
+import { CountryContext } from "../contexts/CountryContext";
 
 function Countries() {
   const { countrydata, setCountrydata } = useContext(CountryContext);
