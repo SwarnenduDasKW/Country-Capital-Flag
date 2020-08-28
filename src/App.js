@@ -1,13 +1,12 @@
 import React, { useState, useMemo } from "react";
-import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { CountryContext } from "./CountryContext";
+import { AnswerContext } from "./answer-context";
 import Countries from "./Countries";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import QuizCountryCurrency from "./QuizCountryCurrency";
 import QuizMaster from "./QuizMaster";
-import { CountryContext } from "./CountryContext";
-import { AnswerContext } from "./answer-context";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
 
 function App() {
   const [countrydata, setCountrydata] = useState([]);
@@ -32,8 +31,6 @@ function App() {
             <AnswerContext.Provider value={answerProvider}>
               <Route path="/quiz" exact component={QuizMaster} />
             </AnswerContext.Provider>
-            {/* <QuizCountryCurrency /> */}
-            {/* <Countries /> */}
           </Switch>
         </CountryContext.Provider>
         <Footer />

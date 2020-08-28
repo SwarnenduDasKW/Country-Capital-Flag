@@ -54,8 +54,8 @@ The url will be created.
 
 ## To do items
 
-1. The quiz has hardcoded countries. Need to work with random data
-2. Show the flag of the country in the quiz page
+1. The quiz has hardcoded countries. Need to work with random data - Done
+2. Show the flag of the country in the quiz page - Done
 3. Implement scoring system - Done
 4. The footer doesn't stay at the bottom when the country list becomes smaller (basically when you search for a country)
    The code to keep footer at the bottom is done for the quiz page but need a generic solution.
@@ -65,3 +65,4 @@ The url will be created.
 8. Remember the previous answers so that user can see the chosen answers. - Done
 9. Remove the "Check Answer" and Score. Replace that by Submit button. A report will popup showing user's selection and correct answer and score.
 10. Code cleanup and organize the components properly
+11. When the countries are loading show "Loading..." in the page not "No data found"

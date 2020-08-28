@@ -1,16 +1,18 @@
 .quizmaster {
-  margin-top: 80px;
+  margin-top: 60px;
   display: flex;
   /* flex-direction: row; */
   justify-content: center;
   /* border: 2px solid red; */
-  min-height: calc(100vh - 40px - 80px);
+  min-height: calc(100vh - 40px - 60px);
+  background-color: rgb(56, 69, 82);
 }
 
 .quizmaster__questions {
   width: 900px;
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
   /* border: 2px solid green; */
 }
 

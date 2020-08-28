@@ -1,14 +1,31 @@
 /**
  *
- * Logic to generate the country capital quiz
+ * Helper functions
  *
  */
 
+//  Get a randon integer btween min and max number inclusive
 export function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   //The maximum is inclusive and the minimum is inclusive
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Returns an array of random numbers between min and max of certain length
+export function getRandomNumbersArray(rand_min, rand_max, op_arr_len) {
+  var arr = [];
+  let rand = 0;
+  //Select "n" random countries from the list of "max" countries
+  while (arr.length < op_arr_len) {
+    rand = getRandomIntInclusive(rand_min, rand_max);
+
+    //Make sure the new number is not already added
+    if (arr.indexOf(rand) < 0) {
+      arr.push(rand);
+    }
+  }
+  return arr;
 }
 
 // Fisher-Yates (aka Knuth) Shuffle.
@@ -42,19 +59,4 @@ export function DurstenfeldShuffle(array) {
   }
 
   return array;
-}
-
-export function getRandomNumbersArray(rand_min, rand_max, op_arr_len) {
-  var arr = [];
-  let rand = 0;
-  //Select "n" random countries from the list of "max" countries
-  while (arr.length < op_arr_len) {
-    rand = getRandomIntInclusive(rand_min, rand_max);
-
-    //Make sure the new number is not already added
-    if (arr.indexOf(rand) < 0) {
-      arr.push(rand);
-    }
-  }
-  return arr;
 }
