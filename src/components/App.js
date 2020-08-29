@@ -22,20 +22,22 @@ function App() {
   ]);
 
   return (
-    <Router>
-      <div className="App">
-        <CountryContext.Provider value={countrydataProvider}>
-          <Navbar />
-          <Switch>
-            <Route path="/" exact component={Countries} />
-            <AnswerContext.Provider value={answerProvider}>
-              <Route path="/quiz" exact component={QuizMaster} />
-            </AnswerContext.Provider>
-          </Switch>
-        </CountryContext.Provider>
-        <Footer />
+    <div className="App">
+      <div className="app_container">
+        <Router>
+          <CountryContext.Provider value={countrydataProvider}>
+            <Navbar />
+            <Switch>
+              <Route path="/" exact component={Countries} />
+              <AnswerContext.Provider value={answerProvider}>
+                <Route path="/quiz" exact component={QuizMaster} />
+              </AnswerContext.Provider>
+            </Switch>
+          </CountryContext.Provider>
+        </Router>
       </div>
-    </Router>
+      <Footer />
+    </div>
   );
 }
 

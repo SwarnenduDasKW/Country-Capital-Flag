@@ -1,3 +1,7 @@
 * {
   margin: 0;
 }
+.app_container {
+  min-height: calc(100vh - 40px);
+  background-color: rgb(56, 69, 82);
+}

@@ -52,31 +52,34 @@ Deploy the application to firebase
 The url will be created.
 [Country Capital Flag - C3f](https://country-capital-flag.web.app/)
 
-## To do items
+## Git commands
 
-1. The quiz has hardcoded countries. Need to work with random data - Done
-2. Show the flag of the country in the quiz page - Done
-3. Implement scoring system - Done
-4. The footer doesn't stay at the bottom when the country list becomes smaller (basically when you search for a country)
-   The code to keep footer at the bottom is done for the quiz page but need a generic solution.
-5. Don't like the white background - Done
-6. The Navbar disappears on scrolling - It's not hapenning now.
-7. Upon loading of the quiz page if user clicks of previous button the application crashes. - Done.
-   Disabled the previous button on the 1st question and the next button on the last question
-8. Remember the previous choise so that user can see the chosen answers. - Done
-9. Remove the "Check Answer" and Score. Replace that by Submit button. A report will popup showing user's selection and correct answer and score.
-10. Code cleanup and organize the components properly
-11. When the countries are loading show "Loading..." not "No data found"
-12. Implement 3 difficulty levels for the quiz. Easy - Medium - Hard
-
-Defects
-
-1. Faulty scoring system.
-2. In the country capital quiz duplicate answer is shown. This is because Country Niue and Jamica have the same capital name Kingston.
-
-Git commands
 git init
 git add .
 git commit -m "first commit"
 git remote add origin https://github.com/SwarnenduDasKW/Country-Capital-Flag.git
 git push -u origin master
+
+## To do items
+
+6. The Navbar disappears on scrolling - It's not hapenning now.
+7. Remove the "Check Answer" and Score. Replace that by Submit button. A report will popup showing user's selection and correct answer and score.
+8. When the countries are loading show "Loading..." not "No data found"
+9. Implement 3 difficulty levels for the quiz. Easy - Medium - Hard
+
+## Defects
+
+1. Faulty scoring system.
+2. In the country capital quiz duplicate answer is shown. This is because Country Niue and Jamica have the same capital name Kingston.
+
+## Done
+
+1. Done - The quiz has hardcoded countries. Need to work with random data.
+2. Done - Show the flag of the country in the quiz page.
+3. Done - Implement scoring system.
+4. Done - The footer doesn't stay at the bottom when the country list becomes smaller (basically when you search for a country). The code to keep footer at the bottom is done for the quiz page but need a generic solution.
+5. Done - Don't like the white background.
+6. Done - Upon loading of the quiz page if user clicks of previous button the application crashes.
+   Disabled the previous button on the 1st question and the next button on the last question
+7. Done - Remember the previous choise so that user can see the chosen answers.
+8. Done - Code cleanup and organize the components properly.
