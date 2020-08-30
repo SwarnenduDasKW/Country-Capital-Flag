@@ -1,4 +1,5 @@
-import AllCountries from "../data/AllCountries.json";
+// import AllCountries from "../data/AllCountries.json";
+import AllCountries from "../data/AllCountriesLight.json";
 // import AllCountriesLite from "./data/AllCountriesLight.json";
 import {
   getRandomNumbersArray,
@@ -6,12 +7,12 @@ import {
   FisherYatesShuffle,
 } from "../helpers/Utilities";
 
-function getCountryListForQuiz() {
+function getCountryListForQuiz(level) {
   const noOfQuestions = 10;
   let allCountriesWithIndex = [];
   let quizCountries = [];
 
-  console.log("AllCountriesLite", AllCountries.length);
+  //console.log(`getCountryListForQuiz - ${level}`, AllCountries.length);
 
   //Populate an array with index
   //Check if this step is necessary
@@ -19,8 +20,8 @@ function getCountryListForQuiz() {
   if (AllCountries.length > 0) {
     let counter = 0;
     AllCountries.map((c) => {
-      //Only copy countries with capital
-      if (c.name && c.capital && c.flag) {
+      //Only copy countries with capital for a given level
+      if (c.name && c.capital && c.flag && c.quizDifficultyLevel === level) {
         counter++;
         allCountriesWithIndex.push({
           id: counter,
@@ -37,8 +38,11 @@ function getCountryListForQuiz() {
 
   //Get 10 random countries from the list and populate in an array
   let countryCount = allCountriesWithIndex.length;
-  // console.log("QuizCountryCurrency - no of countries", countryCount);
-  // console.log("QuizCountryCurrency - no of countries", allCountriesWithIndex);
+  console.log(
+    `getCountryListForQuiz - no of countries(level-${level})`,
+    countryCount
+  );
+  // console.log("getCountryListForQuiz - Countries", allCountriesWithIndex);
 
   if (countryCount > 0) {
     //Get a list of "n" numbers
@@ -99,7 +103,7 @@ function getCountryListForQuiz() {
       //console.log("Quiz --> final element", element);
     });
 
-    // console.log("QuizCountryCurrency --> final countries", quizCountries);
+    console.log("QuizCountryCurrency --> final countries", quizCountries);
   }
 
   return quizCountries;

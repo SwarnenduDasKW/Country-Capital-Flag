@@ -94,9 +94,6 @@ function Navbar() {
           value={input}
           onChange={(event) => setInput(event.target.value)}
         />
-        {/* <button className="nav__searchbutton" onClick={() => searchCountry()}>
-          Search
-        </button> */}
       </div>
       <div className="nav__badge">
         <Badge badgeContent={countrydata.length} color="error" max={999}>

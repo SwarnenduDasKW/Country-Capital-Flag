@@ -6,6 +6,7 @@ import Countries from "../components/Countries";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import QuizMaster from "../components/QuizMaster";
+import QuizLevel from "../components/QuizLevel";
 import "../stylesheets/App.css";
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
             <Switch>
               <Route path="/" exact component={Countries} />
               <AnswerContext.Provider value={answerProvider}>
-                <Route path="/quiz" exact component={QuizMaster} />
+                <Route path="/quiz" exact component={QuizLevel} />
               </AnswerContext.Provider>
             </Switch>
           </CountryContext.Provider>

@@ -7,9 +7,9 @@ import { AnswerContext } from "../contexts/answerContext";
 import getCountryListForQuiz from "../components/getCountryListForQuiz";
 import "../stylesheets/QuizMaster.css";
 
-function QuizMaster() {
+function QuizMaster({ level }) {
   const [id, setId] = useState(0);
-  const [quizCountries] = useState(getCountryListForQuiz());
+  const [quizCountries] = useState(getCountryListForQuiz(level));
   const { answer } = useContext(AnswerContext);
 
   //Clear the previous answers when the quiz page is loaded

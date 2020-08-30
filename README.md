@@ -62,10 +62,9 @@ git push -u origin master
 
 ## To do items
 
-6. The Navbar disappears on scrolling - It's not hapenning now.
-7. Remove the "Check Answer" and Score. Replace that by Submit button. A report will popup showing user's selection and correct answer and score.
-8. When the countries are loading show "Loading..." not "No data found"
-9. Implement 3 difficulty levels for the quiz. Easy - Medium - Hard
+The Navbar disappears on scrolling - It's not hapenning now.
+Remove the "Check Answer" and Score. Replace that by Submit button. A report will popup showing user's selection and correct answer and score.
+When the countries are loading show "Loading..." not "No data found"
 
 ## Defects
 
@@ -83,3 +82,4 @@ git push -u origin master
    Disabled the previous button on the 1st question and the next button on the last question
 7. Done - Remember the previous choise so that user can see the chosen answers.
 8. Done - Code cleanup and organize the components properly.
+9. Done - Implement 3 difficulty levels for the quiz. Easy - Medium - Hard
