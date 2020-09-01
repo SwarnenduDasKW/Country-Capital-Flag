@@ -1,37 +1,36 @@
 .countrycapitalquiz {
   /* border: 1px solid red; */
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* text-align: center; */
+  /* border: 2px solid yellow; */
+  /* border: 2px solid blueviolet; */
+  /* margin-top: 20px; */
 }
 
 .countrycapitalquiz__question {
-  display: flex;
+  /* border: 2px solid greenyellow; */
+  /* margin-top: 15px; */
+  /* margin-right: -10px; */
+  /* display: flex; */
   color: rgba(233, 233, 233, 0.801);
 }
 
 .countrycapitalquiz__avatar {
-  margin-left: auto;
-  margin-right: auto;
+  /* border: 2px dotted blue; */
+  display: flex;
+  justify-content: center;
+  /* text-align: center; */
+  /* margin-left: 50%; */
+  /* margin-right: auto; */
   margin-top: 10px;
-  display: block;
-}
-
-.countrycapitalquiz__flag {
-  object-fit: contain;
-  width: 100%;
-  height: auto;
+  /* display: block; */
 }
 
 .countrycapitalquiz__answers {
   /* border: 2px solid green; */
   margin-top: 20px;
   color: white;
-}
-
-.countrycapitalquiz_checkanswer {
-  margin-top: 20px !important;
-  width: 170px !important;
 }
 
 .countrycapitalquiz__score {

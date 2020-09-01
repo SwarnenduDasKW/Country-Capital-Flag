@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import "../stylesheets/Countries.css";
 import Country from "../components/Country";
 import { CountryContext } from "../contexts/CountryContext";
 
 function Countries() {
-  const { countrydata, setCountrydata } = useContext(CountryContext);
+  const { countrydata } = useContext(CountryContext);
 
   return (
     <div className="countries">
@@ -24,7 +24,7 @@ function Countries() {
         //   ))}
         // </ul>
         <div className="countries__list">
-          {countrydata.map((country) => (
+          {countrydata.map(country => (
             <Country
               key={country.alpha2Code}
               name={country.name}

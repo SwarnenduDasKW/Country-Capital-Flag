@@ -1,23 +1,67 @@
 .quizmaster {
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* min-width: 100vw; */
+  /* flex-direction: wrap; */
+  /* text-align: center; */
+  /* border: 2px solid red; */
+  margin-top: 70px;
+  /* border: 2px solid red; */
 }
-
-.quizmaster__questions {
-  width: 900px;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 60px;
+.quizmaster__quesno {
+  float: left;
+  /* margin-top: 10px; */
+  /* margin-left: 10px; */
+  /* border: 2px solid aqua; */
+  padding-left: 5px;
 }
-
-.quizmaster__questions > Button {
-  /* margin auto to horizontally center the elements in it's container */
-  margin: auto;
-  height: 40px;
-  width: 120px !important;
-}
-
-.quizmaster__next {
+.quizmaster__timer {
   float: right;
-  width: 120px !important;
+  padding-right: 5px;
+  /* border: 2px solid yellow; */
+}
+.quizmaster__quiz {
+  /* border: 2px dotted violet; */
+  /* justify-content: center; */
+  text-align: center;
+  /* margin-top: 70px; */
+}
+
+.quizmaster__btn {
+  object-fit: cover;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 15px;
+  transition-duration: 0.4s;
+}
+
+.quizmaster__btn:hover {
+  cursor: pointer;
+  filter: saturate(150%);
+  filter: contrast(150%);
+}
+
+.quizmaster__btn:active {
+  filter: invert(100%);
+}
+
+.quizmaster__btnsubmit {
+  margin-top: 10px;
+  border: 1px solid rgb(199, 95, 95);
+}
+
+.quizmaster__modalflag {
+  object-fit: cover;
+  width: 40px;
+  height: 20px;
+  box-shadow: 0 0 5px grey;
+}
+
+.quizmaster__modalgreen {
+  color: green !important;
+}
+
+.quizmaster__modalred {
+  color: red !important;
 }

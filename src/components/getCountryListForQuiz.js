@@ -61,17 +61,18 @@ function getCountryListForQuiz(level) {
       });
     });
 
-    // console.log("QuizCountryCurrency --> quizCountries", quizCountries);
+    console.log("QuizCountryCurrency --> quizCountries", quizCountries);
     let arr_options = [];
     var rand250 = 0;
     //Build the options for answers
     quizCountries.forEach((element) => {
+      console.log("QuizCountryCurrency --> element", element);
       while (arr_options.length < 3) {
         rand250 = getRandomIntInclusive(1, countryCount);
 
         //Make sure the new number is not already added
         //And the option should not be the element itself. It will be added later.
-        if (arr_options.indexOf(rand250) < 0 && element !== rand250) {
+        if (arr_options.indexOf(rand250) < 0 && element.id !== rand250) {
           arr_options.push(rand250);
         }
       }
@@ -103,7 +104,7 @@ function getCountryListForQuiz(level) {
       //console.log("Quiz --> final element", element);
     });
 
-    console.log("QuizCountryCurrency --> final countries", quizCountries);
+    // console.log("getCountryListForQuiz --> final countries", quizCountries);
   }
 
   return quizCountries;

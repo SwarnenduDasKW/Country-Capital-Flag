@@ -14,6 +14,7 @@ function Footer() {
         <a
           href={"https://www.linkedin.com/in/swarnendu-das-41479531/"}
           target="_blank"
+          rel="noopener noreferrer"
         >
           © Swarnendu Das ||
         </a>
@@ -25,11 +26,16 @@ function Footer() {
         <a
           href={"https://www.linkedin.com/in/swarnendu-das-41479531/"}
           target="_blank"
+          rel="noopener noreferrer"
         >
           <LinkedInIcon fontSize="small" />
         </a>
         <GitHubIcon fontSize="small" />
-        <a href={"https://twitter.com/SwarnenduDasgm1"} target="_blank">
+        <a
+          href={"https://twitter.com/SwarnenduDasgm1"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <TwitterIcon fontSize="small" />
         </a>
       </div>

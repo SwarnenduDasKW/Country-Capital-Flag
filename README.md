@@ -54,22 +54,24 @@ The url will be created.
 
 ## Git commands
 
-git init
-git add .
-git commit -m "first commit"
-git remote add origin https://github.com/SwarnenduDasKW/Country-Capital-Flag.git
-git push -u origin master
+> git init
+> git add .
+> git commit -m "first commit"
+> git remote add origin https://github.com/SwarnenduDasKW/Country-Capital-Flag.git
+> git push -u origin master
 
 ## To do items
 
-The Navbar disappears on scrolling - It's not hapenning now.
-Remove the "Check Answer" and Score. Replace that by Submit button. A report will popup showing user's selection and correct answer and score.
-When the countries are loading show "Loading..." not "No data found"
+- [ ] The Navbar disappears on scrolling - It's not hapenning now. This happens when the application is left open on localhost for long hours. Maybe because of network connection drop.
+- [ ] When the countries are loading show "Loading..." not "No data found"
+- [ ] Set the timer when a user start the quiz
+- [ ] Change the opacity of the previous and next buttons when they reach beginning or end of the question set
+- [ ] Once the report is closed take the user back to the Quiz level page
 
 ## Defects
 
-1. Faulty scoring system.
-2. In the country capital quiz duplicate answer is shown. This is because Country Niue and Jamica have the same capital name Kingston.
+- [x] Faulty scoring system.
+- [x] In the country capital quiz duplicate answer is shown. This is because Country Niue and Jamica have the same capital name Kingston.
 
 ## Done
 
@@ -83,3 +85,4 @@ When the countries are loading show "Loading..." not "No data found"
 7. Done - Remember the previous choise so that user can see the chosen answers.
 8. Done - Code cleanup and organize the components properly.
 9. Done - Implement 3 difficulty levels for the quiz. Easy - Medium - Hard
+10. Done - Remove the "Check Answer" and Score. Replace that by Submit button. A report will popup showing user's selection and correct answer and score.

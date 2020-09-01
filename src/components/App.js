@@ -5,7 +5,6 @@ import { AnswerContext } from "../contexts/answerContext";
 import Countries from "../components/Countries";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import QuizMaster from "../components/QuizMaster";
 import QuizLevel from "../components/QuizLevel";
 import "../stylesheets/App.css";
 
@@ -13,13 +12,13 @@ function App() {
   const [countrydata, setCountrydata] = useState([]);
   const countrydataProvider = useMemo(() => ({ countrydata, setCountrydata }), [
     countrydata,
-    setCountrydata,
+    setCountrydata
   ]);
 
   const [answer, setAnswer] = useState(new Map());
   const answerProvider = useMemo(() => ({ answer, setAnswer }), [
     answer,
-    setAnswer,
+    setAnswer
   ]);
 
   return (
