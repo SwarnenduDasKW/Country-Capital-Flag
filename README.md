@@ -54,18 +54,18 @@ The url will be created.
 
 ## Git commands
 
-> git init
-> git add .
-> git commit -m "first commit"
-> git remote add origin https://github.com/SwarnenduDasKW/Country-Capital-Flag.git
-> git push -u origin master
+- git init
+- git add .
+- git commit -m "first commit"
+- git remote add origin https://github.com/SwarnenduDasKW/Country-Capital-Flag.git
+- git push -u origin master
 
 ## To do items
 
 - [ ] The Navbar disappears on scrolling - It's not hapenning now. This happens when the application is left open on localhost for long hours. Maybe because of network connection drop.
 - [ ] When the countries are loading show "Loading..." not "No data found"
 - [ ] Set the timer when a user start the quiz
-- [ ] Change the opacity of the previous and next buttons when they reach beginning or end of the question set
+- [x] Change the opacity of the previous and next buttons when they reach beginning or end of the question set
 - [ ] Once the report is closed take the user back to the Quiz level page
 
 ## Defects

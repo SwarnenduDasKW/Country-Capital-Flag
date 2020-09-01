@@ -13,6 +13,8 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 import Button from "@material-ui/core/Button";
 import FaceIcon from "@material-ui/icons/Face";
 import Table from "@material-ui/core/Table";
@@ -22,10 +24,12 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+
 import {
   StyledTableCell,
   StyledTableRow,
-  useStyles
+  useStyles,
 } from "../helpers/MuiStyles";
 
 function QuizMaster({ level }) {
@@ -34,8 +38,10 @@ function QuizMaster({ level }) {
   const { answer } = useContext(AnswerContext);
   const [open, setOpen] = useState(false);
   const [summary, setSummary] = useState([]);
+  const classes = useStyles();
 
   const handleClose = () => {
+    setSummary([]);
     setOpen(false);
   };
 
@@ -45,16 +51,16 @@ function QuizMaster({ level }) {
   }, []);
 
   const handlesubmit = () => {
-    quizCountries.map(c => {
-      setSummary(e => [
+    quizCountries.map((c) => {
+      setSummary((e) => [
         ...e,
         {
           id: c.id,
           name: c.name,
           capital: c.capital,
           flag: c.flag,
-          choice: answer.get(c.name)
-        }
+          choice: answer.get(c.name),
+        },
       ]);
     });
 
@@ -80,13 +86,17 @@ function QuizMaster({ level }) {
         <CountryCapitalQuiz question={quizCountries[id]} />
         <div className="quizmaster__prevnext">
           <img
-            className="quizmaster__btn"
+            className={id === 0 ? "quizmaster__btndisabled" : "quizmaster__btn"}
             src={previous}
             alt="Previous"
             onClick={id === 0 ? null : () => setId(id - 1)}
           />
           <img
-            className="quizmaster__btn"
+            className={
+              id === quizCountries.length - 1
+                ? "quizmaster__btndisabled"
+                : "quizmaster__btn"
+            }
             src={next}
             alt="Next"
             onClick={
@@ -95,29 +105,42 @@ function QuizMaster({ level }) {
           />
         </div>
         <img
-          className="quizmaster__btn quizmaster__btnsubmit"
+          className={
+            id === quizCountries.length - 1
+              ? "quizmaster__btn quizmaster__btnsubmit"
+              : "quizmaster__btndisabled"
+          }
           src={submit}
           alt="Submit"
-          onClick={handlesubmit}
+          onClick={id === quizCountries.length - 1 && handlesubmit}
         />
       </div>
       <Dialog onClose={handleClose} open={open}>
-        <DialogTitle onClose={handleClose}>Summary</DialogTitle>
+        <DialogTitle
+          className="quizmaster__modaltitle"
+          onClose={handleClose}
+          disableTypography
+        >
+          <IconButton onClick={handleClose} className="quizmaster__modalclose">
+            <CloseIcon />
+          </IconButton>
+          <Typography variant="h5">Summary</Typography>
+        </DialogTitle>
         <DialogContent dividers>
           <TableContainer component={Paper}>
             <Table size="small">
               <TableHead>
                 <TableRow>
                   <StyledTableCell align="center">Flag</StyledTableCell>
-                  <StyledTableCell align="right">Country Name</StyledTableCell>
-                  <StyledTableCell align="right">Capital</StyledTableCell>
-                  <StyledTableCell align="right">Your Answer</StyledTableCell>
+                  <StyledTableCell align="left">Country Name</StyledTableCell>
+                  <StyledTableCell align="left">Capital</StyledTableCell>
+                  <StyledTableCell align="left">Your Answer</StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {console.log("QuizMaster before")}
-                {summary.map(row => (
-                  <TableRow key={row.id}>
+                {summary.map((row) => (
+                  <StyledTableRow key={row.id}>
                     <TableCell>
                       <img
                         src={row.flag}
@@ -125,10 +148,10 @@ function QuizMaster({ level }) {
                         className="quizmaster__modalflag"
                       />
                     </TableCell>
-                    <TableCell align="right">{row.name}</TableCell>
-                    <TableCell align="right">{row.capital}</TableCell>
+                    <TableCell align="left">{row.name}</TableCell>
+                    <TableCell align="left">{row.capital}</TableCell>
                     <TableCell
-                      align="right"
+                      align="left"
                       className={
                         row.capital === row.choice
                           ? "quizmaster__modalgreen"
@@ -137,7 +160,7 @@ function QuizMaster({ level }) {
                     >
                       {!row.choice ? "Skipped" : row.choice}
                     </TableCell>
-                  </TableRow>
+                  </StyledTableRow>
                 ))}
               </TableBody>
             </Table>
@@ -145,17 +168,18 @@ function QuizMaster({ level }) {
         </DialogContent>
         <DialogActions>
           <Chip
+            className="quizmaster__chipscore"
             color="primary"
             icon={<FaceIcon />}
             label={`Score: 
-            ${summary.filter(s => s.choice === s.capital).length}  
+            ${summary.filter((s) => s.choice === s.capital).length}  
             /
             ${summary.length}
           `}
           />
-          <Button autoFocus onClick={handleClose} color="primary">
+          {/* <Button autoFocus onClick={handleClose} color="primary">
             Close
-          </Button>
+          </Button> */}
         </DialogActions>
       </Dialog>
     </div>

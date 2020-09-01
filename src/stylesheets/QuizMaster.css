@@ -29,7 +29,7 @@
 .quizmaster__btn {
   object-fit: cover;
   border-radius: 10px;
-  width: 200px;
+  width: 180px;
   height: 50px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-left: 15px;
@@ -47,8 +47,21 @@
 }
 
 .quizmaster__btnsubmit {
-  margin-top: 10px;
-  border: 1px solid rgb(199, 95, 95);
+  margin-top: 20px;
+  width: 230px;
+  height: 70px;
+  border: 2px solid rgb(221, 44, 44);
+}
+
+.quizmaster__btndisabled {
+  object-fit: cover;
+  border-radius: 10px;
+  width: 180px;
+  height: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 15px;
+  transition-duration: 0.4s;
+  opacity: 40%;
 }
 
 .quizmaster__modalflag {
@@ -64,4 +77,12 @@
 
 .quizmaster__modalred {
   color: red !important;
+}
+
+.quizmaster__chipscore {
+  margin-right: 15px;
+}
+
+.quizmaster__modalclose {
+  float: right;
 }
