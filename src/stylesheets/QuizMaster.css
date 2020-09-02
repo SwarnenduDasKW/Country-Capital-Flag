@@ -61,7 +61,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-left: 15px;
   transition-duration: 0.4s;
-  opacity: 40%;
+  opacity: 0.5;
 }
 
 .quizmaster__modalflag {
