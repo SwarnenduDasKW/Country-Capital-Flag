@@ -112,7 +112,7 @@ function QuizMaster({ level }) {
           }
           src={submit}
           alt="Submit"
-          onClick={id === quizCountries.length - 1 && handlesubmit}
+          onClick={id === quizCountries.length - 1 ? handlesubmit : undefined}
         />
       </div>
       <Dialog onClose={handleClose} open={open}>

@@ -1,11 +1,6 @@
 .quizlevel {
-  /* height: 100vh; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   /* I am not sure why if I get rid of the border then top margin pushes the footer down. Just adding a border stops it  */
   border: 2px solid rgb(56, 69, 82);
-  /* margin-top: 0px; */
 }
 
 .quizlevel__imglevels {
@@ -14,10 +9,7 @@
   margin-top: 100px;
 }
 .quizlevel__imgbtn {
-  /* object-fit: contain; */
-  /* margin-top: 100px; */
   margin-left: 15px;
-  /* margin: 15px; */
   border-radius: 10px;
   width: 200px;
   height: 100px;

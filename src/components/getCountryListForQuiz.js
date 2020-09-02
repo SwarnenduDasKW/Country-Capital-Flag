@@ -61,12 +61,12 @@ function getCountryListForQuiz(level) {
       });
     });
 
-    console.log("QuizCountryCurrency --> quizCountries", quizCountries);
+    // console.log("getCountryListForQuiz --> quizCountries", quizCountries);
     let arr_options = [];
     var rand250 = 0;
     //Build the options for answers
     quizCountries.forEach((element) => {
-      console.log("QuizCountryCurrency --> element", element);
+      // console.log("getCountryListForQuiz --> element", element);
       while (arr_options.length < 3) {
         rand250 = getRandomIntInclusive(1, countryCount);
 

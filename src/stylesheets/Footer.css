@@ -1,12 +1,8 @@
 .footer {
-  /* position: fixed; */
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   background-color: rgb(0, 8, 59);
-  /* z-index: 99; */
   height: 40px;
-  /* position: sticky; */
   bottom: 0;
   left: 0;
   right: 0;
@@ -16,7 +12,6 @@
 .footer__texts {
   align-items: center;
   display: flex;
-  /* width: 50%; */
   margin-left: 10px;
 }
 
