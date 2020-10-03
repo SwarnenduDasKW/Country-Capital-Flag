@@ -15,6 +15,7 @@
 }
 
 .country__flag:hover {
+  cursor: pointer;
   transform: scale(1.08); /*Scales the picture it's 1.08 times */
   opacity: 1;
 }

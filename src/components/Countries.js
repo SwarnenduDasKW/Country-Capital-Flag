@@ -24,12 +24,13 @@ function Countries() {
         //   ))}
         // </ul>
         <div className="countries__list">
-          {countrydata.map(country => (
+          {countrydata.map((country) => (
             <Country
               key={country.alpha2Code}
               name={country.name}
               flag={country.flag}
               capital={country.capital}
+              alpha3Code={country.alpha3Code}
               currency={
                 country.currencies[0].name +
                 " - " +
