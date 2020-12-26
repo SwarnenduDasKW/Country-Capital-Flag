@@ -3,6 +3,7 @@
 Show flags of all the countries of the world and their capital and currency too. You may wish to take a quiz if you like to test your knowledge
 
 [Country Capital Flag - C3f](https://country-capital-flag.web.app/)
+![C3F Home](https://github.com/SwarnenduDasKW/Country-Capital-Flag/blob/master/public/Home.png)
 
 ## Available Scripts
 
@@ -86,3 +87,8 @@ The url will be created.
 8. Done - Code cleanup and organize the components properly.
 9. Done - Implement 3 difficulty levels for the quiz. Easy - Medium - Hard
 10. Done - Remove the "Check Answer" and Score. Replace that by Submit button. A report will popup showing user's selection and correct answer and score.
+
+### Screenshots
+![Quiz Home](https://github.com/SwarnenduDasKW/Country-Capital-Flag/blob/master/public/Quiz_Home.png)
+
+![Quiz Question](https://github.com/SwarnenduDasKW/Country-Capital-Flag/blob/master/public/Quiz.png)
