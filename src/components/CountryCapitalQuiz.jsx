@@ -1,34 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
 import { AnswerContext } from "../contexts/answerContext";
-import Avatar from "@material-ui/core/Avatar";
-import { makeStyles } from "@material-ui/core/styles";
+import Avatar from "@mui/material/Avatar";
 import "../stylesheets/CountryCapitalQuiz.css";
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: "flex",
-    "& > *": {
-      margin: theme.spacing(1)
-    }
-  },
-  small: {
-    width: theme.spacing(3),
-    height: theme.spacing(3)
-  },
-  large: {
-    width: theme.spacing(10),
-    height: theme.spacing(10)
-  }
-}));
 
 function CountryCapitalQuiz(props) {
   const [value, setValue] = useState("");
   const { answer, setAnswer } = useContext(AnswerContext);
-  const classes = useStyles();
 
   // Check how you can call setHelperText from ParentComponent when Next or Previous button is clicked.
   useEffect(() => {
@@ -51,8 +32,8 @@ function CountryCapitalQuiz(props) {
       </div>
       <div className="countrycapitalquiz__avatar">
         <Avatar
-          className={classes.large}
-          alt="CountryName"
+          sx={{ width: 80, height: 80 }}
+          alt={props.question.name}
           src={props.question.flag}
         />
       </div>

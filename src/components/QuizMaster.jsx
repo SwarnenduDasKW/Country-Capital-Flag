@@ -5,26 +5,26 @@ import getCountryListForQuiz from "../components/getCountryListForQuiz";
 import previous from "../images/previous.png";
 import next from "../images/next.png";
 import submit from "../images/submit.png";
-import ContactSupportIcon from "@material-ui/icons/ContactSupport";
-import TimerIcon from "@material-ui/icons/Timer";
-import Chip from "@material-ui/core/Chip";
+import ContactSupportIcon from "@mui/icons-material/ContactSupport";
+import TimerIcon from "@mui/icons-material/Timer";
+import Chip from "@mui/material/Chip";
 import "../stylesheets/QuizMaster.css";
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogActions from "@material-ui/core/DialogActions";
-import IconButton from "@material-ui/core/IconButton";
-import CloseIcon from "@material-ui/icons/Close";
-import Button from "@material-ui/core/Button";
-import FaceIcon from "@material-ui/icons/Face";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import Button from "@mui/material/Button";
+import FaceIcon from "@mui/icons-material/Face";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
 
 import {
   StyledTableCell,
@@ -40,6 +40,10 @@ function QuizMaster({ level }) {
   const [summary, setSummary] = useState([]);
   const classes = useStyles();
 
+  // Timer state - 5 minutes (300 seconds) for the quiz
+  const [timeLeft, setTimeLeft] = useState(300);
+  const [timerActive, setTimerActive] = useState(true);
+
   const handleClose = () => {
     setSummary([]);
     setOpen(false);
@@ -50,7 +54,40 @@ function QuizMaster({ level }) {
     answer.clear();
   }, []);
 
+  // Timer countdown effect
+  useEffect(() => {
+    if (!timerActive || timeLeft <= 0) {
+      if (timeLeft === 0) {
+        // Auto-submit when time runs out
+        handlesubmit();
+      }
+      return;
+    }
+
+    const timer = setInterval(() => {
+      setTimeLeft((prevTime) => {
+        if (prevTime <= 1) {
+          setTimerActive(false);
+          return 0;
+        }
+        return prevTime - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [timerActive, timeLeft]);
+
+  // Format time as MM:SS
+  const formatTime = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+
   const handlesubmit = () => {
+    // Stop the timer
+    setTimerActive(false);
+
     quizCountries.map((c) => {
       setSummary((e) => [
         ...e,
@@ -80,7 +117,11 @@ function QuizMaster({ level }) {
         />
       </div>
       <div className="quizmaster__timer">
-        <Chip icon={<TimerIcon />} label="Timer" color="primary" />
+        <Chip
+          icon={<TimerIcon />}
+          label={formatTime(timeLeft)}
+          color={timeLeft < 60 ? "error" : "primary"}
+        />
       </div>
       <div className="quizmaster__quiz">
         <CountryCapitalQuiz question={quizCountries[id]} />

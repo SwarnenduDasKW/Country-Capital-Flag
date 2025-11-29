@@ -3,13 +3,14 @@ import "../stylesheets/Navbar.css";
 import logo from "../images/c3f2.png";
 import quiz_logo from "../images/quiz.png";
 import { CountryContext } from "../contexts/CountryContext";
-import Badge from "@material-ui/core/Badge";
-import PublicIcon from "@material-ui/icons/Public";
+import Badge from "@mui/material/Badge";
+import PublicIcon from "@mui/icons-material/Public";
 import { Link } from "react-router-dom";
 
-const base_url = "https://restcountries.eu/rest/v2/all/";
-const url_country = "https://restcountries.eu/rest/v2/name/";
-//const country_search_url = "https://restcountries.eu/rest/v2/name/uni";
+const base_url = "https://restcountries.com/v3.1/all?fields=name,capital,flags,currencies,cca2,cca3";
+const url_country = "https://restcountries.com/v3.1/name/";
+const url_country_fields = "?fields=name,capital,flags,currencies,cca2,cca3";
+//const country_search_url = "https://restcountries.com/v3.1/name/uni";
 
 function Navbar() {
   const [show, handleShow] = useState(false);
@@ -21,13 +22,15 @@ function Navbar() {
 
   //Change the nav bar background color from dark blue to black on scrolling
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       if (window.scrollY > 100) {
         handleShow(true);
       } else handleShow(false);
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll");
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -43,7 +46,7 @@ function Navbar() {
     if (input === "") {
       url = base_url;
     } else {
-      url = `${url_country}${input}`;
+      url = `${url_country}${input}${url_country_fields}`;
     }
 
     // Exapmle of Async-Await call
