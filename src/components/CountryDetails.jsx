@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 import clsx from "clsx";
-import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import CardActions from "@material-ui/core/CardActions";
-import Collapse from "@material-ui/core/Collapse";
-import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import { red } from "@material-ui/core/colors";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Collapse from "@mui/material/Collapse";
+import Avatar from "@mui/material/Avatar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import { red } from "@mui/material/colors";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import MapChart from "./MapChart";
-import ReactTooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
 import AllCountries from "../data/AllCountriesLight.json";
 import CountryCover from "../data/CountryCover.json";
 import ComingSoonImage from "../images/imgcomingsoon.png";
@@ -49,7 +49,7 @@ function CountryDetails(props) {
   const [expanded, setExpanded] = React.useState(false);
   const [content, setContent] = useState("");
   const [objCountry, setObjCountry] = useState();
-  const [coverImage, setCoverImage] = useState("");
+  const [coverImage, setCoverImage] = useState(ComingSoonImage);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -58,36 +58,54 @@ function CountryDetails(props) {
   useEffect(() => {
     console.log("CountryDetails --> alpha3code: ", props.alpha3code);
     const objCountry = AllCountries.find(
-      (element) => element.alpha3Code === props.alpha3code
+      (element) => element.alpha3Code === props.alpha3code || element.cca3 === props.alpha3code
     );
     console.log("CountryDetails --> objCountry: ", objCountry);
     setObjCountry(objCountry);
+
+    // Try to find in CountryCover first
     const coverImg = CountryCover.find(
-      (c) => c.alpha3Code === props.alpha3code
+      (c) => c.alpha3Code === props.alpha3code || c.cca3 === props.alpha3code
     );
-    console.log("CountryDetails --> coverImg: ", coverImg);
-    if (!coverImg) {
+
+    if (coverImg) {
+      setCoverImage(coverImg.imgsrc);
+    } else if (objCountry) {
+      // Use Lorem Picsum with a seed based on country name for consistent images
+      const countryName = objCountry.name;
+      const seed = countryName.toLowerCase().replace(/\s+/g, '-');
+      const picsumUrl = `https://picsum.photos/seed/${seed}/800/600`;
+      console.log("CountryDetails --> picsumUrl: ", picsumUrl);
+      setCoverImage(picsumUrl);
+    } else {
       setCoverImage(ComingSoonImage);
-    } else setCoverImage(coverImg.imgsrc);
-  }, []);
+    }
+  }, [props.alpha3code]);
+
+  if (!objCountry) {
+    return <div>Loading country details...</div>;
+  }
 
   return (
     <div className="countrydetails">
       <Card className={classes.root}>
         <CardHeader
-          avatar={<Avatar className={classes.avatar} src={objCountry?.flag} />}
+          avatar={<Avatar className={classes.avatar} src={objCountry?.flag || objCountry?.flags?.png} />}
           action={
             <IconButton>
               <MoreVertIcon />
             </IconButton>
           }
-          title={`Capital: ${objCountry?.capital} | Currency: ${objCountry?.currencies[0].name}`}
-          subheader={`Region: ${objCountry?.region} | Sub Region: ${objCountry?.subregion}`}
+          title={`${objCountry?.name || 'N/A'} (${objCountry?.alpha3Code || props.alpha3code})`}
+          subheader={`Capital: ${objCountry?.capital || 'N/A'} | Currency: ${objCountry?.currencies?.[0]?.name ||
+            (objCountry?.currencies && Object.values(objCountry.currencies)[0]?.name) ||
+            'N/A'
+            } | Region: ${objCountry?.region || 'N/A'}`}
         />
         <CardMedia className={classes.media} image={coverImage} title="" />
         <CardContent>
           <MapChart alpha3code={props.alpha3code} />
-          <ReactTooltip>{content}</ReactTooltip>
+          <Tooltip id="my-tooltip" />
         </CardContent>
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">

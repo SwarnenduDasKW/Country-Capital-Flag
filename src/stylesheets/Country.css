@@ -1,9 +1,8 @@
 .country {
-  margin: 5px;
+  margin: 0;
   border: 1px solid #ccc;
-  float: left;
   width: 180px;
-
+  flex-shrink: 0;
   background-color: rgb(83, 78, 78);
 }
 
@@ -11,12 +10,14 @@
   object-fit: contain;
   width: 100%;
   height: auto;
-  transition: transform 450ms; /* use a delay while transforming. Here on mouse hover the picture grows */
+  transition: transform 450ms;
+  /* use a delay while transforming. Here on mouse hover the picture grows */
 }
 
 .country__flag:hover {
   cursor: pointer;
-  transform: scale(1.08); /*Scales the picture it's 1.08 times */
+  transform: scale(1.08);
+  /*Scales the picture it's 1.08 times */
   opacity: 1;
 }
 

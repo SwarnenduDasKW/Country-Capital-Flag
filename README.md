@@ -1,94 +1,278 @@
-## A simple ReactJS App
+# 🌍 Country-Capital-Flag Quiz App
 
-Show flags of all the countries of the world and their capital and currency too. You may wish to take a quiz if you like to test your knowledge
+A modern, interactive React application that helps users learn about countries, their capitals, flags, and geography through an engaging quiz game and interactive world map.
 
-[Country Capital Flag - C3f](https://country-capital-flag.web.app/)
-![C3F Home](https://github.com/SwarnenduDasKW/Country-Capital-Flag/blob/master/public/Home.png)
+![React](https://img.shields.io/badge/React-18.2.0-blue)
+![Vite](https://img.shields.io/badge/Vite-5.0.0-purple)
+![MUI](https://img.shields.io/badge/MUI-5.14.18-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+### 🗺️ Interactive Country Explorer
+- **250+ Countries**: Browse flags, capitals, and details for countries worldwide
+- **Interactive World Map**: Click on flags to see countries highlighted on a world map
+- **Rich Country Details**: View capital, currency, region, and country code (alpha3)
+- **Beautiful Images**: Curated landmark photos for 253 countries from Wikimedia Commons
 
-### `npm start`
+### 🎯 Quiz Game
+- **Three Difficulty Levels**: Easy, Medium, and Hard
+- **Timed Challenges**: 5-minute countdown timer with auto-submit
+- **Score Tracking**: Real-time scoring with visual feedback (green/red)
+- **Flag Display**: See country flags alongside questions
+- **Summary Report**: Detailed results showing correct/incorrect answers
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 🎨 Modern UI/UX
+- **Material-UI v5**: Beautiful, responsive design
+- **Smooth Animations**: Hover effects and transitions
+- **Dark Theme**: Eye-friendly color scheme
+- **Responsive Layout**: Works on desktop, tablet, and mobile
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 🚀 Getting Started
 
-### `npm run build`
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/Country-Capital-Flag.git
 
-To build use
-.\Country-Capital-Flag> npm run build
+# Navigate to project directory
+cd Country-Capital-Flag
 
-The code is deploed in Firebase
+# Install dependencies
+npm install --legacy-peer-deps
 
-### `Firebase Deploy`
+# Start development server
+npm run dev
+```
 
-Install firebase-tools
+The app will be available at `http://localhost:5173`
 
-> npm install -g firebase-tools
+### Build for Production
 
-Connect to firebase console
+```bash
+# Create optimized production build
+npm run build
 
-> firebase login
+# Preview production build
+npm run preview
+```
 
-Upon successful login
+## 📁 Project Structure
 
-> firebase init
+```
+Country-Capital-Flag/
+├── src/
+│   ├── components/          # React components
+│   │   ├── App.jsx         # Main app component
+│   │   ├── Navbar.jsx      # Navigation bar
+│   │   ├── Countries.jsx   # Country list display
+│   │   ├── Country.jsx     # Individual country card
+│   │   ├── CountryDetails.jsx  # Country detail modal
+│   │   ├── MapChart.jsx    # Interactive world map
+│   │   ├── QuizLevel.jsx   # Quiz difficulty selector
+│   │   ├── QuizMaster.jsx  # Quiz game controller
+│   │   └── CountryCapitalQuiz.jsx  # Quiz question component
+│   ├── contexts/           # React contexts
+│   │   ├── CountryContext.js    # Country data state
+│   │   └── answerContext.js     # Quiz answers state
+│   ├── data/               # Static data files
+│   │   ├── AllCountriesLight.json  # Country database (250 countries)
+│   │   └── CountryCover.json       # Country images (253 entries)
+│   ├── helpers/            # Utility functions
+│   ├── images/             # Static images
+│   └── stylesheets/        # CSS files
+├── index.html              # HTML entry point
+├── vite.config.js          # Vite configuration
+└── package.json            # Dependencies and scripts
+```
 
-Follow the on-screen menu options for hosting the application in firebase.
+## 🛠️ Technologies Used
 
-Deploy the application to firebase
+### Core
+- **React 18.2.0** - Modern React with hooks
+- **Vite 5.0.0** - Fast build tool and dev server
+- **React Router v6** - Client-side routing
 
-> firebase deploy
+### UI Framework
+- **Material-UI (MUI) v5** - Component library
+- **@mui/icons-material** - Icon set
+- **@emotion** - CSS-in-JS styling
 
-The url will be created.
-[Country Capital Flag - C3f](https://country-capital-flag.web.app/)
+### Data Visualization
+- **react-simple-maps** - Interactive SVG maps
+- **react-tooltip v5** - Tooltips for map interactions
 
-## Git commands
+### Data Sources
+- **REST Countries API v3.1** - Live country data
+- **Wikimedia Commons** - Country landmark images
+- **Lorem Picsum** - Fallback placeholder images
 
-- git init
-- git add .
-- git commit -m "first commit"
-- git remote add origin https://github.com/SwarnenduDasKW/Country-Capital-Flag.git
-- git push -u origin master
+## 🎮 How to Use
 
-## To do items
+### Exploring Countries
+1. **Browse**: Scroll through the country grid on the home page
+2. **Search**: Use the search bar to find specific countries
+3. **View Details**: Click on any flag to open a modal with:
+   - Country name and ISO code
+   - Capital city
+   - Currency
+   - Region information
+   - Interactive map highlighting the country
+   - Beautiful landmark photo
 
-- [ ] The Navbar disappears on scrolling - It's not hapenning now. This happens when the application is left open on localhost for long hours. Maybe because of network connection drop.
-- [ ] When the countries are loading show "Loading..." not "No data found"
-- [ ] Set the timer when a user start the quiz
-- [x] Change the opacity of the previous and next buttons when they reach beginning or end of the question set
-- [ ] Once the report is closed take the user back to the Quiz level page
+### Playing the Quiz
+1. **Select Difficulty**: Choose Easy, Medium, or Hard
+2. **Answer Questions**: Select the correct capital for each country
+3. **Navigate**: Use Previous/Next buttons to move between questions
+4. **Watch the Timer**: Complete the quiz within 5 minutes
+5. **Submit**: Click Submit on the last question (or wait for auto-submit)
+6. **Review Results**: See your score and review all answers
 
-## Defects
+## 🔧 Configuration
 
-- [x] Faulty scoring system.
-- [x] In the country capital quiz duplicate answer is shown. This is because Country Niue and Jamica have the same capital name Kingston.
+### API Endpoints
+The app uses the REST Countries API v3.1:
+```javascript
+// All countries
+https://restcountries.com/v3.1/all?fields=name,capital,flags,currencies,cca2,cca3
 
-## Done
+// Search by name
+https://restcountries.com/v3.1/name/{countryName}?fields=name,capital,flags,currencies,cca2,cca3
+```
 
-1. Done - The quiz has hardcoded countries. Need to work with random data.
-2. Done - Show the flag of the country in the quiz page.
-3. Done - Implement scoring system.
-4. Done - The footer doesn't stay at the bottom when the country list becomes smaller (basically when you search for a country). The code to keep footer at the bottom is done for the quiz page but need a generic solution.
-5. Done - Don't like the white background.
-6. Done - Upon loading of the quiz page if user clicks of previous button the application crashes.
-   Disabled the previous button on the 1st question and the next button on the last question
-7. Done - Remember the previous choise so that user can see the chosen answers.
-8. Done - Code cleanup and organize the components properly.
-9. Done - Implement 3 difficulty levels for the quiz. Easy - Medium - Hard
-10. Done - Remove the "Check Answer" and Score. Replace that by Submit button. A report will popup showing user's selection and correct answer and score.
+### Quiz Timer
+Default: 5 minutes (300 seconds)
+To change, edit `QuizMaster.jsx`:
+```javascript
+const [timeLeft, setTimeLeft] = useState(300); // Change to desired seconds
+```
 
-### Screenshots
-![Quiz Home](https://github.com/SwarnenduDasKW/Country-Capital-Flag/blob/master/public/Quiz_Home.png)
+### Country Images
+Images are sourced in this priority:
+1. **CountryCover.json** - Curated images (253 countries)
+2. **Lorem Picsum** - Fallback with country-based seed
 
-![Quiz Question](https://github.com/SwarnenduDasKW/Country-Capital-Flag/blob/master/public/Quiz.png)
+## 📊 Data Structure
+
+### Country Object (v3.1 API)
+```javascript
+{
+  name: { common: "United States" },
+  capital: ["Washington, D.C."],
+  flags: { png: "https://flagcdn.com/w320/us.png" },
+  currencies: { USD: { name: "United States dollar", symbol: "$" } },
+  cca2: "US",
+  cca3: "USA"
+}
+```
+
+### Quiz Question Format
+```javascript
+{
+  id: 1,
+  name: "France",
+  capital: "Paris",
+  flag: "https://flagcdn.com/w320/fr.png",
+  options: ["Paris", "London", "Berlin", "Madrid"]
+}
+```
+
+## 🎨 Customization
+
+### Styling
+The app uses a combination of:
+- **CSS files** in `src/stylesheets/`
+- **MUI's `sx` prop** for inline styling
+- **MUI's `makeStyles`** for component-specific styles
+
+### Theme
+To customize the theme, edit `src/components/App.jsx`:
+```javascript
+const theme = createTheme({
+  palette: {
+    primary: { main: '#1976d2' },
+    secondary: { main: '#dc004e' },
+  },
+});
+```
+
+## 🐛 Troubleshooting
+
+### PowerShell Execution Policy Error
+If you encounter script execution errors on Windows:
+```bash
+# Option 1: Use Command Prompt
+cmd /c npm run dev
+
+# Option 2: Bypass for current session
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+npm run dev
+```
+
+### Port Already in Use
+Vite will automatically try alternative ports (5174, 5175, etc.)
+
+### API Rate Limiting
+The REST Countries API is free but may have rate limits. The app caches data in context to minimize requests.
+
+## 📝 Recent Upgrades (2024)
+
+This project was recently upgraded from a 4-year-old codebase to modern standards:
+
+### Build System
+- ✅ Migrated from Create React App to **Vite**
+- ✅ Faster dev server and build times
+
+### Dependencies
+- ✅ React 16 → **React 18**
+- ✅ Material-UI v4 → **MUI v5**
+- ✅ React Router v5 → **v6**
+- ✅ React Tooltip v4 → **v5**
+
+### Features Added
+- ✅ **Quiz timer** with countdown and auto-submit
+- ✅ **Score tracking** with visual feedback
+- ✅ **253 curated country images** from Wikimedia Commons
+- ✅ **Modern API integration** (REST Countries v3.1)
+- ✅ **Improved error handling** and loading states
+
+### Code Quality
+- ✅ Updated to modern React hooks
+- ✅ Proper dependency management
+- ✅ Fixed all deprecation warnings
+- ✅ Added ThemeProvider for MUI v5 compatibility
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- **REST Countries API** - Free API for country data
+- **Wikimedia Commons** - Free, high-quality country images
+- **Nations Online** - Additional curated country photos
+- **React Simple Maps** - Interactive map component
+- **Material-UI Team** - Beautiful React components
+
+## 📧 Contact
+
+For questions or feedback, please open an issue on GitHub.
+
+---
+
+**Made with ❤️ using React, Vite, and MUI**
