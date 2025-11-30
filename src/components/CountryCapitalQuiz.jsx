@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
+
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import { AnswerContext } from "../contexts/answerContext";
 import Avatar from "@mui/material/Avatar";
 import "../stylesheets/CountryCapitalQuiz.css";
+
 
 function CountryCapitalQuiz(props) {
   const [value, setValue] = useState("");
@@ -17,6 +19,7 @@ function CountryCapitalQuiz(props) {
     // console.log("CountryCapitalQuiz --> props", props);
     //Remember the previous selection.
     setValue(answer.get(props.question.name));
+
   }, [props]);
 
   const handleRadioChange = event => {
@@ -31,10 +34,17 @@ function CountryCapitalQuiz(props) {
         <h1>What is the capital of {props.question.name}?</h1>
       </div>
       <div className="countrycapitalquiz__avatar">
-        <Avatar
-          sx={{ width: 80, height: 80 }}
-          alt={props.question.name}
+        <img
           src={props.question.flag}
+          alt={props.question.name}
+          style={{
+            height: "150px",
+            width: "auto",
+            maxWidth: "100%",
+            objectFit: "contain",
+            borderRadius: "8px",
+            boxShadow: "0 4px 8px rgba(0,0,0,0.1)"
+          }}
         />
       </div>
       <div className="countrycapitalquiz__answers">
@@ -56,6 +66,8 @@ function CountryCapitalQuiz(props) {
           </RadioGroup>
         </FormControl>
       </div>
+
+
     </div>
   );
 }

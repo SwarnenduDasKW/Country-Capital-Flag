@@ -67,7 +67,20 @@ function Navbar() {
             console.log("Navbar --> fetch. No data found");
             setCountrydata([]);
           } else {
-            setCountrydata(data);
+            // Filter to ensure the common name actually contains the search term
+            // (API matches official names and native names too, e.g. "United Mexican States" for "can")
+            const filteredData = data.filter(country => {
+              const commonName = country.name.common || country.name;
+              return commonName.toLowerCase().includes(input.toLowerCase());
+            });
+
+            // Sort data alphabetically by name
+            filteredData.sort((a, b) => {
+              const nameA = a.name.common || a.name;
+              const nameB = b.name.common || b.name;
+              return nameA.localeCompare(nameB);
+            });
+            setCountrydata(filteredData);
           }
         },
         (error) => {

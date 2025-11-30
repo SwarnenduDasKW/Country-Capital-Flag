@@ -1,0 +1,782 @@
+[
+    {
+        "country": "Afghanistan",
+        "fact": "The world's first oil paintings were drawn in the caves of Bamiyan around 650 AD."
+    },
+    {
+        "country": "Albania",
+        "fact": "In the evenings, locals like to walk. This is known as xhiro."
+    },
+    {
+        "country": "Algeria",
+        "fact": "The Sahara Desert covers 80% of the country."
+    },
+    {
+        "country": "Andorra",
+        "fact": "It is the only country in the world with Catalan as its official language."
+    },
+    {
+        "country": "Angola",
+        "fact": "The giant sable antelope, thought to be extinct, was rediscovered here in 2004."
+    },
+    {
+        "country": "Antigua and Barbuda",
+        "fact": "It has 365 beaches, one for every day of the year."
+    },
+    {
+        "country": "Argentina",
+        "fact": "It is the birthplace of the tango dance."
+    },
+    {
+        "country": "Armenia",
+        "fact": "It was the first country to adopt Christianity as its state religion in 301 AD."
+    },
+    {
+        "country": "Australia",
+        "fact": "There are more kangaroos than people in Australia."
+    },
+    {
+        "country": "Austria",
+        "fact": "The sewing machine was invented here by Josef Madersperger."
+    },
+    {
+        "country": "Azerbaijan",
+        "fact": "It is known as 'The Land of Fire' due to its natural burning gas vents."
+    },
+    {
+        "country": "Bahamas",
+        "fact": "It has the clearest water in the world, with visibility of over 61 meters (200 feet)."
+    },
+    {
+        "country": "Bahrain",
+        "fact": "It is home to the 'Tree of Life', a 400-year-old tree that grows in the desert with no known water source."
+    },
+    {
+        "country": "Bangladesh",
+        "fact": "It has the longest natural sea beach in the world, Cox's Bazar."
+    },
+    {
+        "country": "Barbados",
+        "fact": "It is the birthplace of Rihanna and the grapefruit."
+    },
+    {
+        "country": "Belarus",
+        "fact": "40% of the country is covered by forests."
+    },
+    {
+        "country": "Belgium",
+        "fact": "It produces more than 220,000 tons of chocolate per year."
+    },
+    {
+        "country": "Belize",
+        "fact": "It has the only jaguar reserve in the world."
+    },
+    {
+        "country": "Benin",
+        "fact": "It is the birthplace of the Voodoo religion."
+    },
+    {
+        "country": "Bhutan",
+        "fact": "It is the only carbon-negative country in the world."
+    },
+    {
+        "country": "Bolivia",
+        "fact": "It has the world's largest salt flat, Salar de Uyuni."
+    },
+    {
+        "country": "Bosnia and Herzegovina",
+        "fact": "Sarajevo hosted the 1984 Winter Olympics."
+    },
+    {
+        "country": "Botswana",
+        "fact": "It is home to the world's largest concentration of African elephants."
+    },
+    {
+        "country": "Brazil",
+        "fact": "It has the largest Japanese population outside of Japan."
+    },
+    {
+        "country": "Brunei Darussalam",
+        "fact": "Citizens pay zero income tax."
+    },
+    {
+        "country": "Bulgaria",
+        "fact": "It produces up to 85% of the world's rose oil."
+    },
+    {
+        "country": "Burkina Faso",
+        "fact": "Its name means 'Land of Incorruptible People'."
+    },
+    {
+        "country": "Burundi",
+        "fact": "Gustave, a man-eating crocodile, is rumored to have killed 300 people here."
+    },
+    {
+        "country": "Cabo Verde",
+        "fact": "It was uninhabited until the 15th century."
+    },
+    {
+        "country": "Cambodia",
+        "fact": "Angkor Wat is the largest religious monument in the world."
+    },
+    {
+        "country": "Cameroon",
+        "fact": "It is known as 'Africa in Miniature' due to its geological and cultural diversity."
+    },
+    {
+        "country": "Canada",
+        "fact": "It has the longest coastline of any country in the world."
+    },
+    {
+        "country": "Central African Republic",
+        "fact": "It is one of the best places to see forest elephants."
+    },
+    {
+        "country": "Chad",
+        "fact": "Lake Chad has shrunk by 95% since 1963."
+    },
+    {
+        "country": "Chile",
+        "fact": "The Atacama Desert is the driest place on Earth."
+    },
+    {
+        "country": "China",
+        "fact": "The Great Wall of China is longer than the distance from London to Beijing."
+    },
+    {
+        "country": "Colombia",
+        "fact": "It is the world's leading producer of emeralds."
+    },
+    {
+        "country": "Comoros",
+        "fact": "It is the world's largest producer of ylang-ylang essence."
+    },
+    {
+        "country": "Congo (Democratic Republic of the)",
+        "fact": "It is the second-largest country in Africa."
+    },
+    {
+        "country": "Congo (Republic of the)",
+        "fact": "It is home to the Western Lowland Gorilla."
+    },
+    {
+        "country": "Costa Rica",
+        "fact": "It contains 5% of the world's biodiversity."
+    },
+    {
+        "country": "Côte d'Ivoire",
+        "fact": "It is the world's largest producer of cocoa beans."
+    },
+    {
+        "country": "Croatia",
+        "fact": "The necktie (cravat) originated here."
+    },
+    {
+        "country": "Cuba",
+        "fact": "It has one of the highest doctor-to-patient ratios in the world."
+    },
+    {
+        "country": "Cyprus",
+        "fact": "It is the legendary birthplace of Aphrodite, the Greek goddess of love."
+    },
+    {
+        "country": "Czech Republic",
+        "fact": "It consumes the most beer per capita in the world."
+    },
+    {
+        "country": "Denmark",
+        "fact": "The Danish flag is the oldest state flag still in use."
+    },
+    {
+        "country": "Djibouti",
+        "fact": "Lake Assal is the lowest point in Africa."
+    },
+    {
+        "country": "Dominica",
+        "fact": "It is known as the 'Nature Island of the Caribbean'."
+    },
+    {
+        "country": "Dominican Republic",
+        "fact": "It is the most visited destination in the Caribbean."
+    },
+    {
+        "country": "Ecuador",
+        "fact": "It is the closest country to space due to Mount Chimborazo's location on the equatorial bulge."
+    },
+    {
+        "country": "Egypt",
+        "fact": "The Great Pyramid of Giza is the only surviving wonder of the ancient world."
+    },
+    {
+        "country": "El Salvador",
+        "fact": "It is known as the 'Land of Volcanoes'."
+    },
+    {
+        "country": "Equatorial Guinea",
+        "fact": "It is the only Spanish-speaking country in Africa."
+    },
+    {
+        "country": "Eritrea",
+        "fact": "Its capital, Asmara, is known for its well-preserved Art Deco architecture."
+    },
+    {
+        "country": "Estonia",
+        "fact": "It was the first country to allow online voting in general elections."
+    },
+    {
+        "country": "Eswatini",
+        "fact": "It is one of the last absolute monarchies in the world."
+    },
+    {
+        "country": "Ethiopia",
+        "fact": "It is the only African country never to have been colonized."
+    },
+    {
+        "country": "Fiji",
+        "fact": "It is composed of more than 330 islands."
+    },
+    {
+        "country": "Finland",
+        "fact": "It has more saunas than cars."
+    },
+    {
+        "country": "France",
+        "fact": "It is the most visited country in the world."
+    },
+    {
+        "country": "Gabon",
+        "fact": "80% of the country is covered by rainforests."
+    },
+    {
+        "country": "Gambia",
+        "fact": "It is the smallest country on mainland Africa."
+    },
+    {
+        "country": "Georgia",
+        "fact": "It is considered the birthplace of wine, with production dating back 8,000 years."
+    },
+    {
+        "country": "Germany",
+        "fact": "There are over 1,000 kinds of sausages in Germany."
+    },
+    {
+        "country": "Ghana",
+        "fact": "Lake Volta is the largest man-made lake in the world by surface area."
+    },
+    {
+        "country": "Greece",
+        "fact": "It has thousands of islands, but only about 200 are inhabited."
+    },
+    {
+        "country": "Grenada",
+        "fact": "It is known as the 'Island of Spice' due to its nutmeg production."
+    },
+    {
+        "country": "Guatemala",
+        "fact": "It is the birthplace of chocolate (the Mayans worshipped the cacao tree)."
+    },
+    {
+        "country": "Guinea",
+        "fact": "It possesses the world's largest reserves of bauxite."
+    },
+    {
+        "country": "Guinea-Bissau",
+        "fact": "It is home to the Bijagos Archipelago, a UNESCO Biosphere Reserve."
+    },
+    {
+        "country": "Guyana",
+        "fact": "Kaieteur Falls is the world's largest single-drop waterfall by volume."
+    },
+    {
+        "country": "Haiti",
+        "fact": "It was the first independent black republic in the world."
+    },
+    {
+        "country": "Honduras",
+        "fact": "It is home to the Great Blue Hole's southern counterpart, the Mesoamerican Barrier Reef."
+    },
+    {
+        "country": "Hungary",
+        "fact": "It has one of the oldest metro lines in the world (Budapest Metro)."
+    },
+    {
+        "country": "Iceland",
+        "fact": "It has no mosquitoes."
+    },
+    {
+        "country": "India",
+        "fact": "It is the birthplace of chess, algebra, and yoga."
+    },
+    {
+        "country": "Indonesia",
+        "fact": "It is made up of over 17,000 islands."
+    },
+    {
+        "country": "Iran",
+        "fact": "It is one of the world's oldest continuous civilizations."
+    },
+    {
+        "country": "Iraq",
+        "fact": "It is considered the 'Cradle of Civilization' (Mesopotamia)."
+    },
+    {
+        "country": "Ireland",
+        "fact": "Halloween originated from the ancient Celtic festival of Samhain here."
+    },
+    {
+        "country": "Israel",
+        "fact": "The Dead Sea is the lowest point on Earth."
+    },
+    {
+        "country": "Italy",
+        "fact": "It has the most UNESCO World Heritage Sites in the world."
+    },
+    {
+        "country": "Jamaica",
+        "fact": "It produces the most music per capita."
+    },
+    {
+        "country": "Japan",
+        "fact": "It has the highest life expectancy in the world."
+    },
+    {
+        "country": "Jordan",
+        "fact": "Petra, the 'Rose City', is carved directly into rock."
+    },
+    {
+        "country": "Kazakhstan",
+        "fact": "It is the largest landlocked country in the world."
+    },
+    {
+        "country": "Kenya",
+        "fact": "It is home to the 'Big Five' game animals."
+    },
+    {
+        "country": "Kiribati",
+        "fact": "It is the only country in the world to be situated in all four hemispheres."
+    },
+    {
+        "country": "Korea (North)",
+        "fact": "It has its own time zone, Pyongyang Time."
+    },
+    {
+        "country": "Korea (South)",
+        "fact": "It has the fastest average internet speeds in the world."
+    },
+    {
+        "country": "Kuwait",
+        "fact": "Its currency, the Kuwaiti Dinar, is the highest-valued currency in the world."
+    },
+    {
+        "country": "Kyrgyzstan",
+        "fact": "The epic poem of Manas is one of the longest in the world."
+    },
+    {
+        "country": "Laos",
+        "fact": "It is the most heavily bombed country in history per capita."
+    },
+    {
+        "country": "Latvia",
+        "fact": "It has one of the fastest internet speeds in the world."
+    },
+    {
+        "country": "Lebanon",
+        "fact": "It is the only Middle Eastern country without a desert."
+    },
+    {
+        "country": "Lesotho",
+        "fact": "It is the only country in the world entirely above 1,000 meters in elevation."
+    },
+    {
+        "country": "Liberia",
+        "fact": "It was founded by freed American slaves."
+    },
+    {
+        "country": "Libya",
+        "fact": "90% of the country is desert."
+    },
+    {
+        "country": "Liechtenstein",
+        "fact": "It is the world's largest producer of false teeth."
+    },
+    {
+        "country": "Lithuania",
+        "fact": "It was the last country in Europe to convert to Christianity."
+    },
+    {
+        "country": "Luxembourg",
+        "fact": "It has the highest GDP per capita in the world."
+    },
+    {
+        "country": "Madagascar",
+        "fact": "90% of its wildlife is found nowhere else on Earth."
+    },
+    {
+        "country": "Malawi",
+        "fact": "Lake Malawi contains more fish species than any other lake on Earth."
+    },
+    {
+        "country": "Malaysia",
+        "fact": "It has the world's largest flower, the Rafflesia."
+    },
+    {
+        "country": "Maldives",
+        "fact": "It is the lowest country in the world."
+    },
+    {
+        "country": "Mali",
+        "fact": "The Great Mosque of Djenné is the largest mud-brick building in the world."
+    },
+    {
+        "country": "Malta",
+        "fact": "It has been a filming location for 'Game of Thrones' and 'Gladiator'."
+    },
+    {
+        "country": "Marshall Islands",
+        "fact": "It is made up of over 1,000 islands and islets."
+    },
+    {
+        "country": "Mauritania",
+        "fact": "It has the longest train in the world (often 2.5 km long)."
+    },
+    {
+        "country": "Mauritius",
+        "fact": "It was the only known home of the Dodo bird."
+    },
+    {
+        "country": "Mexico",
+        "fact": "It introduced chocolate, corn, and chilies to the world."
+    },
+    {
+        "country": "Micronesia",
+        "fact": "It uses giant stone coins called Rai stones."
+    },
+    {
+        "country": "Moldova",
+        "fact": "It has the largest wine cellar in the world (Milestii Mici)."
+    },
+    {
+        "country": "Monaco",
+        "fact": "It is the second-smallest country in the world."
+    },
+    {
+        "country": "Mongolia",
+        "fact": "It has the lowest population density of any independent country."
+    },
+    {
+        "country": "Montenegro",
+        "fact": "It has one of the oldest olive trees in the world (over 2,000 years old)."
+    },
+    {
+        "country": "Morocco",
+        "fact": "It is home to the world's oldest university, the University of Al Quaraouiyine."
+    },
+    {
+        "country": "Mozambique",
+        "fact": "Its flag is the only one to feature a modern assault rifle (AK-47)."
+    },
+    {
+        "country": "Myanmar",
+        "fact": "Men and women both wear a skirt-like cloth called a Longyi."
+    },
+    {
+        "country": "Namibia",
+        "fact": "It is home to the oldest desert in the world, the Namib."
+    },
+    {
+        "country": "Nauru",
+        "fact": "It is the only country without an official capital."
+    },
+    {
+        "country": "Nepal",
+        "fact": "It is the only country with a non-rectangular flag."
+    },
+    {
+        "country": "Netherlands",
+        "fact": "There are more bicycles than people."
+    },
+    {
+        "country": "New Zealand",
+        "fact": "It was the first country to give women the right to vote (1893)."
+    },
+    {
+        "country": "Nicaragua",
+        "fact": "It has the only freshwater sharks in the world (in Lake Nicaragua)."
+    },
+    {
+        "country": "Niger",
+        "fact": "It has the world's highest fertility rate."
+    },
+    {
+        "country": "Nigeria",
+        "fact": "It has the largest economy in Africa."
+    },
+    {
+        "country": "North Macedonia",
+        "fact": "It is the birthplace of Mother Teresa."
+    },
+    {
+        "country": "Norway",
+        "fact": "It introduced salmon sushi to Japan."
+    },
+    {
+        "country": "Oman",
+        "fact": "It is the oldest independent state in the Arab world."
+    },
+    {
+        "country": "Pakistan",
+        "fact": "It produces about 50% of the world's footballs."
+    },
+    {
+        "country": "Palau",
+        "fact": "It created the world's first shark sanctuary."
+    },
+    {
+        "country": "Panama",
+        "fact": "It is the only place in the world where you can see the sun rise on the Pacific and set on the Atlantic."
+    },
+    {
+        "country": "Papua New Guinea",
+        "fact": "It has over 800 indigenous languages."
+    },
+    {
+        "country": "Paraguay",
+        "fact": "It is the only country with a flag that has different emblems on the front and back."
+    },
+    {
+        "country": "Peru",
+        "fact": "The potato originated here."
+    },
+    {
+        "country": "Philippines",
+        "fact": "It is the text messaging capital of the world."
+    },
+    {
+        "country": "Poland",
+        "fact": "It has the world's biggest castle by land area (Malbork Castle)."
+    },
+    {
+        "country": "Portugal",
+        "fact": "It is the oldest country in Europe with defined borders."
+    },
+    {
+        "country": "Qatar",
+        "fact": "It is the safest country in the world according to the Numbeo Crime Index."
+    },
+    {
+        "country": "Romania",
+        "fact": "It is home to the heaviest building in the world, the Palace of the Parliament."
+    },
+    {
+        "country": "Russia",
+        "fact": "It covers 11 time zones."
+    },
+    {
+        "country": "Rwanda",
+        "fact": "It has the highest percentage of women in parliament in the world."
+    },
+    {
+        "country": "Saint Kitts and Nevis",
+        "fact": "It is the smallest country in the Americas."
+    },
+    {
+        "country": "Saint Lucia",
+        "fact": "It is the only country named after a woman."
+    },
+    {
+        "country": "Saint Vincent and the Grenadines",
+        "fact": "It was a filming location for 'Pirates of the Caribbean'."
+    },
+    {
+        "country": "Samoa",
+        "fact": "In 2011, it skipped a day (Dec 30) to align time zones with Australia."
+    },
+    {
+        "country": "San Marino",
+        "fact": "It is the oldest surviving sovereign state and constitutional republic."
+    },
+    {
+        "country": "Sao Tome and Principe",
+        "fact": "It was the first African country to grow cocoa."
+    },
+    {
+        "country": "Saudi Arabia",
+        "fact": "It is the largest country without a river."
+    },
+    {
+        "country": "Senegal",
+        "fact": "It is home to the 'Pink Lake' (Lake Retba)."
+    },
+    {
+        "country": "Serbia",
+        "fact": "It is the world's largest exporter of raspberries."
+    },
+    {
+        "country": "Seychelles",
+        "fact": "It was once a pirate hideout."
+    },
+    {
+        "country": "Sierra Leone",
+        "fact": "It is famous for the 'Star of Sierra Leone', the third-largest diamond ever found."
+    },
+    {
+        "country": "Singapore",
+        "fact": "It is one of only three surviving city-states in the world."
+    },
+    {
+        "country": "Slovakia",
+        "fact": "It has the highest number of castles and chateaux per capita."
+    },
+    {
+        "country": "Slovenia",
+        "fact": "It has a vineyard for every 70 people."
+    },
+    {
+        "country": "Solomon Islands",
+        "fact": "Some locals have naturally blonde hair despite having dark skin."
+    },
+    {
+        "country": "Somalia",
+        "fact": "It has the longest coastline on the mainland of Africa."
+    },
+    {
+        "country": "South Africa",
+        "fact": "It has three capital cities: Pretoria, Cape Town, and Bloemfontein."
+    },
+    {
+        "country": "South Sudan",
+        "fact": "It is the youngest country in the world (gained independence in 2011)."
+    },
+    {
+        "country": "Spain",
+        "fact": "It produces over 40% of the world's olive oil."
+    },
+    {
+        "country": "Sri Lanka",
+        "fact": "It is known as the 'Teardrop of India'."
+    },
+    {
+        "country": "Sudan",
+        "fact": "It has more pyramids than Egypt."
+    },
+    {
+        "country": "Suriname",
+        "fact": "It is the most forested country in the world."
+    },
+    {
+        "country": "Sweden",
+        "fact": "It imports waste from other countries to power its energy plants."
+    },
+    {
+        "country": "Switzerland",
+        "fact": "It has enough nuclear fallout shelters to house its entire population."
+    },
+    {
+        "country": "Syria",
+        "fact": "Damascus is the oldest continuously inhabited capital in the world."
+    },
+    {
+        "country": "Taiwan",
+        "fact": "It collects the most garbage per person for recycling."
+    },
+    {
+        "country": "Tajikistan",
+        "fact": "93% of the country is mountainous."
+    },
+    {
+        "country": "Tanzania",
+        "fact": "Nearly 30% of the country is National Parks."
+    },
+    {
+        "country": "Thailand",
+        "fact": "It is the only Southeast Asian country never to have been colonized by a European power."
+    },
+    {
+        "country": "Timor-Leste",
+        "fact": "It has some of the most biodiverse waters in the world."
+    },
+    {
+        "country": "Togo",
+        "fact": "Its capital, Lomé, is known for its grand markets."
+    },
+    {
+        "country": "Tonga",
+        "fact": "It is the only Pacific nation to never lose its indigenous government."
+    },
+    {
+        "country": "Trinidad and Tobago",
+        "fact": "The steelpan drum was invented here."
+    },
+    {
+        "country": "Tunisia",
+        "fact": "It was the location of the ancient city of Carthage."
+    },
+    {
+        "country": "Turkey",
+        "fact": "Istanbul is the only city in the world located on two continents."
+    },
+    {
+        "country": "Turkmenistan",
+        "fact": "It is home to the 'Door to Hell', a natural gas crater that has been burning since 1971."
+    },
+    {
+        "country": "Tuvalu",
+        "fact": "It earns a significant portion of its income from its internet domain .tv."
+    },
+    {
+        "country": "Uganda",
+        "fact": "It is one of the youngest populations in the world (50% under 14)."
+    },
+    {
+        "country": "Ukraine",
+        "fact": "It has the deepest metro station in the world (Arsenalna)."
+    },
+    {
+        "country": "United Arab Emirates",
+        "fact": "It is home to the world's tallest building, the Burj Khalifa."
+    },
+    {
+        "country": "United Kingdom",
+        "fact": "No point in the UK is more than 75 miles from the sea."
+    },
+    {
+        "country": "United States",
+        "fact": "It has the world's largest economy."
+    },
+    {
+        "country": "Uruguay",
+        "fact": "It was the first country to host the FIFA World Cup."
+    },
+    {
+        "country": "Uzbekistan",
+        "fact": "It is one of only two doubly landlocked countries in the world."
+    },
+    {
+        "country": "Vanuatu",
+        "fact": "It invented bungee jumping (land diving)."
+    },
+    {
+        "country": "Vatican City",
+        "fact": "It is the smallest country in the world."
+    },
+    {
+        "country": "Venezuela",
+        "fact": "It has the world's highest waterfall, Angel Falls."
+    },
+    {
+        "country": "Vietnam",
+        "fact": "It is the world's second-largest exporter of coffee."
+    },
+    {
+        "country": "Yemen",
+        "fact": "It is home to the 'Manhattan of the Desert', Shibam."
+    },
+    {
+        "country": "Zambia",
+        "fact": "It shares Victoria Falls with Zimbabwe."
+    },
+    {
+        "country": "Zimbabwe",
+        "fact": "It has one of the highest literacy rates in Africa."
+    }
+]
