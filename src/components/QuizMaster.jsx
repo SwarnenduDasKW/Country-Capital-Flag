@@ -32,6 +32,10 @@ import {
   useStyles,
 } from "../helpers/MuiStyles";
 
+import Confetti from "react-confetti";
+import CountryFacts from "../data/CountryFacts.json";
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
+
 function QuizMaster({ level }) {
   const [id, setId] = useState(0);
   const [quizCountries] = useState(getCountryListForQuiz(level));
@@ -88,6 +92,16 @@ function QuizMaster({ level }) {
     // Stop the timer
     setTimerActive(false);
 
+    // Calculate the score BEFORE updating state (synchronously)
+    let correctAnswers = 0;
+    quizCountries.forEach((c) => {
+      const userChoice = answer.get(c.name);
+      if (userChoice === c.capital) {
+        correctAnswers++;
+      }
+    });
+
+    // Build summary for display
     quizCountries.map((c) => {
       setSummary((e) => [
         ...e,
@@ -101,7 +115,22 @@ function QuizMaster({ level }) {
       ]);
     });
 
-    // Calculate the score and store it in the state.
+    // Play sound effect for perfect score
+    if (correctAnswers === quizCountries.length) {
+      console.log("Perfect score detected! Playing sound...");
+      // Try to play a sound file if it exists, otherwise use speech synthesis
+      const audio = new Audio('/whoohoo.mp3');
+      audio.play().catch(e => {
+        // Fallback to speech synthesis if audio file fails or is blocked
+        console.log("Audio play failed, using speech synthesis:", e);
+        if ('speechSynthesis' in window) {
+          const utterance = new SpeechSynthesisUtterance("Whoo hoo! Perfect score! You are amazing!");
+          utterance.rate = 1.2;
+          utterance.pitch = 1.2;
+          window.speechSynthesis.speak(utterance);
+        }
+      });
+    }
 
     setOpen(true);
     // console.log("Quizmaster --> Result Summary:", summary);
@@ -109,6 +138,7 @@ function QuizMaster({ level }) {
 
   return (
     <div className="quizmaster">
+      {open && <Confetti width={window.innerWidth} height={window.innerHeight} recycle={true} />}
       <div className="quizmaster__quesno">
         <Chip
           icon={<ContactSupportIcon />}
@@ -155,6 +185,30 @@ function QuizMaster({ level }) {
           alt="Submit"
           onClick={id === quizCountries.length - 1 ? handlesubmit : undefined}
         />
+
+        {answer.get(quizCountries[id].name) && (
+          (() => {
+            const countryFact = CountryFacts.find(f => f.country === quizCountries[id].name);
+            const fact = countryFact ? countryFact.fact : "";
+            return fact ? (
+              <div style={{
+                marginTop: "30px",
+                padding: "10px",
+                textAlign: "center",
+                animation: "fadeIn 0.5s",
+                maxWidth: "600px",
+                marginLeft: "auto",
+                marginRight: "auto"
+              }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "8px" }}>
+                  <LightbulbIcon style={{ color: "#fbc02d", marginRight: "8px" }} />
+                  <strong style={{ color: "#1565c0", fontSize: "1.1rem" }}>Did You Know?</strong>
+                </div>
+                <span style={{ fontStyle: "italic", color: "#ffffff", fontSize: "1rem" }}>{fact}</span>
+              </div>
+            ) : null;
+          })()
+        )}
       </div>
       <Dialog onClose={handleClose} open={open}>
         <DialogTitle
@@ -217,6 +271,25 @@ function QuizMaster({ level }) {
             /
             ${summary.length}
           `}
+          />
+          <Chip
+            className="quizmaster__chipscore"
+            style={{ backgroundColor: "#ff9800", color: "white" }}
+            icon={<span role="img" aria-label="fire" style={{ fontSize: "1.2rem" }}>🔥</span>}
+            label={`Best Streak: ${(() => {
+              let maxStreak = 0;
+              let currentStreak = 0;
+              summary.forEach(s => {
+                if (s.choice === s.capital) {
+                  currentStreak++;
+                  maxStreak = Math.max(maxStreak, currentStreak);
+                } else {
+                  currentStreak = 0;
+                }
+              });
+              return maxStreak;
+            })()
+              }`}
           />
           {/* <Button autoFocus onClick={handleClose} color="primary">
             Close
